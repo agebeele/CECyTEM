@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/cecytem"
+        android:label="Mi CECyTEM"
+        android:roundIcon="@drawable/cecytem"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DUAL"
+        tools:targetApi="31">
+        <activity
+            android:name=".Activity_RecorridoGeorreferenciado"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_social"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_eventos"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_becas"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_plantel"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_grupo"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_carrera"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_turno"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_historial"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_constancia"
+            android:exported="false" />
+        <activity
+            android:name=".formulario_credencial"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Egresado"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Aspirantes"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Registro"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

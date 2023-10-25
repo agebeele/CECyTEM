@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">DUAL</string>
+
+    <string-array name="spinner_ce">
+        <item>Credencial</item>
+        <item>Constancia</item>
+        <item>Historial Academico</item>
+        <item>Cambio de turno</item>
+        <item>Cambio de carrera</item>
+        <item>Cambio de grupo</item>
+        <item>Cambio de plantel</item>
+    </string-array>
+
+    <string-array name="spinner_vi">
+        <item>---</item>
+        <item>Tramite de Becas</item>
+        <item>Registro de Eventos</item>
+        <item>Tramite de Servicio Social</item>
+
+    </string-array>
+</resources>
