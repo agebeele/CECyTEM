@@ -21,7 +21,7 @@ public class PublicacionAdapter extends RecyclerView.Adapter<PublicacionAdapter.
     @NonNull
     @Override
     public PublicacionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_item_publicacion, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_publicacion_adapter, parent, false);
         return new PublicacionViewHolder(itemView);
     }
 

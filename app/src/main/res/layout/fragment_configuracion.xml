@@ -50,7 +50,7 @@
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/perfilBoton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
@@ -62,7 +62,7 @@
                 app:iconTint="@color/verde_1"  />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/llamadaBoton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
@@ -74,7 +74,7 @@
                 app:iconTint="@color/verde_1" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/eventosBoton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
@@ -98,7 +98,7 @@
                 app:iconTint="@color/verde_1"  />
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/nosotrosBoton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
@@ -119,7 +119,7 @@
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/ubicacionBoton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:backgroundTint="#FFFFFF"

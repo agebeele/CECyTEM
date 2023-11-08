@@ -12,7 +12,6 @@
     </string-array>
 
     <string-array name="spinner_vi">
-        <item>---</item>
         <item>Tramite de Becas</item>
         <item>Registro de Eventos</item>
         <item>Tramite de Servicio Social</item>

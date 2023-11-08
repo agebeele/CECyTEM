@@ -35,9 +35,15 @@ public class fragment_inicio extends Fragment {
     }
     private List<item_publicacion> generatePublicacionItems(){
         List<item_publicacion> itemPublicacions = new ArrayList<>();
-        itemPublicacions.add(new item_publicacion(R.drawable.coacalco_imagen,"Consejo tecnico","El dia de mañana se llevara a cabo", "08/11/2023", "10:12"));
-        itemPublicacions.add(new item_publicacion(R.drawable.coacalco_imagen,"Junta de Padres","Firma de boletas", "14/12/2023", "03:12"));
-        itemPublicacions.add(new item_publicacion(R.drawable.coacalco_imagen,"No hay clases","Por el cumpleaños de Brandon", "10/11/2023", "08:30"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"Consejo tecnico","El dia de mañana se llevara a cabo", "08/11/2023", "10:12"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"Junta de Padres","Firma de boletas", "14/12/2023", "03:12"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"No hay clases","Por el cumpleaños de Brandon", "10/11/2023", "08:30"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"Consejo tecnico","El dia de mañana se llevara a cabo", "08/11/2023", "10:12"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"Junta de Padres","Firma de boletas", "14/12/2023", "03:12"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"No hay clases","Por el cumpleaños de Brandon", "10/11/2023", "08:30"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"Consejo tecnico","El dia de mañana se llevara a cabo", "08/11/2023", "10:12"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"Junta de Padres","Firma de boletas", "14/12/2023", "03:12"));
+        itemPublicacions.add(new item_publicacion(R.drawable.cecytem,"No hay clases","Por el cumpleaños de Brandon", "10/11/2023", "08:30"));
 
         return itemPublicacions;
     }
