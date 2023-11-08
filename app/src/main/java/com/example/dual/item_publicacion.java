@@ -1,14 +1,39 @@
 package com.example.dual;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class item_publicacion {
+    private int imagen;
+    private String titulo;
+    private String descripcion;
+    private String fecha;
 
-import android.os.Bundle;
+    public int getImagen() {
+        return imagen;
+    }
 
-public class item_publicacion extends AppCompatActivity {
+    public String getTitulo() {
+        return titulo;
+    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_publicacion);
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    private String hora;
+
+
+    public item_publicacion(int imagen, String titulo, String descripcion, String fecha, String hora) {
+        this.imagen = imagen;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.hora = hora;
     }
 }
