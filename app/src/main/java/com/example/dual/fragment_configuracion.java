@@ -62,6 +62,13 @@ public class fragment_configuracion extends Fragment {
                 cambioNosotros();
             }
         });
+        eventos = (Button)  v.findViewById(R.id.eventosBoton);
+        eventos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cambioEventos();
+            }
+        });
 
         return v;
     }
@@ -71,7 +78,7 @@ public class fragment_configuracion extends Fragment {
         startActivity(pantallaPerfil);
     }
     private void cambioEventos() {
-        Intent pantallaEventos = new Intent(getActivity(),Activity_Perfil.class);
+        Intent pantallaEventos = new Intent(getActivity(),Activity_Eventos.class);
         startActivity(pantallaEventos);
     }
     private void cambioNosotros() {
