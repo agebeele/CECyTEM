@@ -32,16 +32,16 @@ public class fragment_vinculacion extends Fragment {
                     String selectedItem = (String) spinner.getSelectedItem();
                     switch (selectedItem){
                         case "Tramite de Becas":
-                            Intent intent_becas = new Intent(getActivity(),formulario_social.class);
+                            Intent intent_becas = new Intent(getActivity(),formulario_becas.class);
                             startActivity(intent_becas);
                             break;
                         case "Registro de Eventos":
-                            Intent intent_constancia = new Intent(getActivity(),formulario_constancia.class);
-                            startActivity(intent_constancia);
+                            Intent intent_eventos = new Intent(getActivity(),formulario_eventos.class);
+                            startActivity(intent_eventos);
                             break;
-                        case "Tramite_de_Servicio_Social":
-                            Intent intent_historial = new Intent(getActivity(),formulario_historial.class);
-                            startActivity(intent_historial);
+                        case "Tramite de Servicio Social":
+                            Intent intent_ss = new Intent(getActivity(),formulario_social.class);
+                            startActivity(intent_ss);
                             break;
                         default:
                             break;

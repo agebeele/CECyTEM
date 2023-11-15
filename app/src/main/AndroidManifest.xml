@@ -19,6 +19,18 @@
         android:theme="@style/Theme.DUAL"
         tools:targetApi="31">
         <activity
+            android:name=".AdminVin_Login"
+            android:exported="false" />
+        <activity
+            android:name=".AdminCE_Login"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Login"
+            android:exported="false" />
+        <activity
             android:name=".Activity_Eventos"
             android:exported="false" />
         <activity

@@ -16,21 +16,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#FFFFFF"
-        android:drawableBottom="@drawable/baseline_arrow_back_ios_new_24"
-        android:drawableTint="@color/verde_1"
-        android:onClick="regresarPantalla"
-        tools:layout_editor_absoluteX="5dp" />
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +30,43 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Formulario para cambio de grupo"
+                android:textColor="@color/verde_1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tramidateDatos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tramite"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/datosGenerales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="datosGenerales"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="descargarPDF"
+                android:text="Descargar PDF" />
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,18 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Activity_Login">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ScrollView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -109,9 +110,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    app:cardCornerRadius="20dp"
                     android:layout_margin="20dp"
-                    android:backgroundTint="@color/black">
+                    android:backgroundTint="@color/black"
+                    app:cardCornerRadius="20dp">
 
                 </androidx.cardview.widget.CardView>
 
@@ -119,18 +120,18 @@
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Elige una opcion:"
                     android:textColor="@color/verde_2"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="Elige una opcion:" />
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_margin="20dp">
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/button6"
@@ -149,12 +150,19 @@
                         android:text="Egresado" />
                 </LinearLayout>
 
+                <Button
+                    android:id="@+id/adminBoton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Administrador" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    app:cardCornerRadius="20dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:backgroundTint="#DDDDDD" >
+                    android:backgroundTint="#DDDDDD"
+                    app:cardCornerRadius="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -166,31 +174,32 @@
                             android:id="@+id/textView5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="TRANSFORMANDO IDEAS EN REALIDAD :)"
                             android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:text="TRANSFORMANDO IDEAS EN REALIDAD :)" />
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:text="Soporte Técnico: (722) 275-80-40 Ext. 2103, 2101, 1115 y 1117"
                             android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:text="Soporte Técnico: (722) 275-80-40 Ext. 2103, 2101, 1115 y 1117" />
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/paginaOficial"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#0000CC"
+                            android:text="Pagina oficial del CECyTEM"
                             android:textAlignment="center"
-                            android:text="Pagina oficial del CECyTEM" />
+                            android:textColor="#0000CC" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
-        </ScrollView>
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

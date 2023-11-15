@@ -1,9 +1,12 @@
 package com.example.dual;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +17,7 @@ public class Activity_Login extends AppCompatActivity {
 
     TextView sitioOfical;
     EditText usuario, contra;
+    Button mostrarAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +74,47 @@ public class Activity_Login extends AppCompatActivity {
                 }
             }
         });
+
+        mostrarAdmin = (Button) findViewById(R.id.adminBoton);
+        mostrarAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAdminSelectionDialog();
+            }
+        });
     }
+
+    private void showAdminSelectionDialog() {
+        final CharSequence[] adminOptions = {"Administrador Control Escolar", "Administrador Vinculacion"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Selecciona el tipo de administrador");
+        builder.setItems(adminOptions, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // El usuario ha seleccionado un tipo de administrador
+                String selectedAdmin = adminOptions[which].toString();
+
+                // Puedes realizar acciones dependiendo de la selección
+                if (selectedAdmin.equals("Administrador Control Escolar")) {
+                    // Iniciar sesión para Admin A
+                    Toast.makeText(Activity_Login.this, "Iniciar sesión como Administrador Control Escolar", Toast.LENGTH_SHORT).show();
+                    // Aquí puedes abrir la actividad de inicio de sesión para Admin A
+                    Intent adminCE = new Intent(Activity_Login.this, AdminCE_Login.class);
+                    startActivity(adminCE);
+                } else if (selectedAdmin.equals("Administrador Vinculacion")) {
+                    // Iniciar sesión para Admin B
+                    Toast.makeText(Activity_Login.this, "Iniciar sesión como Administrador Vinculacion", Toast.LENGTH_SHORT).show();
+                    // Aquí puedes abrir la actividad de inicio de sesión para Admin B
+                    Intent adminVIN = new Intent(Activity_Login.this, AdminVin_Login.class);
+                    startActivity(adminVIN);
+                }
+            }
+        });
+
+        builder.show();
+    }
+
     public void iniciarSesion(View view) {
         Intent iniciar = new Intent(Activity_Login.this, Activity_Inicio.class);
         startActivity(iniciar);

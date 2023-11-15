@@ -18,21 +18,11 @@
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#FFFFFF"
-        android:drawableBottom="@drawable/baseline_arrow_back_ios_new_24"
-        android:drawableTint="@color/verde_1"
-        android:onClick="regresarPantalla"
-        tools:layout_editor_absoluteX="5dp"  />
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toStartOf="@+id/scrollView3"
@@ -49,10 +39,10 @@
                 android:id="@+id/textView32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Formulario pra Constancia"
                 android:textColor="@color/verde_1"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:text="Formulario pra Constancia" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView33"
@@ -60,9 +50,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Ultimos 3 digitos de tu Numero de control:"
-                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textColor="@color/black"/>
+                android:textStyle="bold" />
 
 
             <EditText
@@ -70,110 +60,110 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number"
-                android:hint="Numero de control"/>
+                android:hint="Numero de control"
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/textView34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18sp"
+                android:text="Grupo:"
                 android:textColor="@color/black"
-                android:text="Grupo:" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ingresa_grupo1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number"
-                android:hint="Grupo"/>
+                android:hint="Grupo"
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/textView35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18sp"
+                android:text="Apellido paterno:"
                 android:textColor="@color/black"
-                android:text="Apellido paterno:" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ingresa_paterno1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Apellido paterno" />
+                android:hint="Apellido paterno"
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/textView36"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18sp"
+                android:text="Apellido materno:"
                 android:textColor="@color/black"
-                android:text="Apellido materno:" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ingresa_materno1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Apellido materno" />
+                android:hint="Apellido materno"
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/textView37"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18sp"
+                android:text="Nombre (s):"
                 android:textColor="@color/black"
-                android:text="Nombre (s):" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ingresa_nombre1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Nombre" />
+                android:hint="Nombre"
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/textView38"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18sp"
+                android:text="Fecha:"
                 android:textColor="@color/black"
-                android:text="Fecha:" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ingresa_fecha1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="date"
-                android:hint="Fecha"/>
+                android:hint="Fecha"
+                android:inputType="date" />
 
             <TextView
                 android:id="@+id/textView39"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18sp"
+                android:text="Observaciones:"
                 android:textColor="@color/black"
-                android:text="Observaciones:" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ingresa_observaciones1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Foto, sello, firma, historial, etc." />
+                android:hint="Foto, sello, firma, historial, etc."
+                android:inputType="text" />
 
             <Button
                 android:id="@+id/button10"
@@ -186,19 +176,19 @@
                 android:id="@+id/textView40"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:text="¿No te sabes los ultimos 3 digitos de tu matricula?"
                 android:textAlignment="center"
-                android:textSize="18sp"
-                android:text="¿No te sabes los ultimos 3 digitos de tu matricula?" />
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/verde_1"
+                android:text="Consultalo aqui"
                 android:textAlignment="center"
-                android:textSize="18sp"
-                android:text="Consultalo aqui" />
+                android:textColor="@color/verde_1"
+                android:textSize="18sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
