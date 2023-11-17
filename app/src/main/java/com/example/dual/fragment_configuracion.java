@@ -139,9 +139,11 @@ public class fragment_configuracion extends Fragment {
             public void onClick(DialogInterface dialog, int which) {
                 intent = new Intent(getActivity(), Activity_Login.class);
                 startActivity(intent);
+                getActivity().finish();  // Cierra la actividad actual
 
                 Toast.makeText(getActivity(), "Sesion cerrada", Toast.LENGTH_SHORT).show();
             }
+
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override

@@ -91,7 +91,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:onClick="inicioAdmin"
+                android:onClick="ingresarVIN"
                 android:text="Iniciar Sesión" />
 
             <Button

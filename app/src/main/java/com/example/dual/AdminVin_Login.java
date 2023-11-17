@@ -1,9 +1,11 @@
 package com.example.dual;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminVin_Login extends AppCompatActivity {
 
@@ -14,5 +16,10 @@ public class AdminVin_Login extends AppCompatActivity {
     }
     public void regresarLogin (View view){
         onBackPressed();
+    }
+    public void ingresarVIN (View view){
+        Intent iniciar = new Intent(AdminVin_Login.this, AdminVIN_Inicio.class);
+        startActivity(iniciar);
+        Toast.makeText(AdminVin_Login.this, "Bienvenido adminitrador",Toast.LENGTH_SHORT).show();
     }
 }
