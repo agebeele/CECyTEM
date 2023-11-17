@@ -19,6 +19,9 @@
         android:theme="@style/Theme.DUAL"
         tools:targetApi="31">
         <activity
+            android:name=".chatBot_inicio"
+            android:exported="false" />
+        <activity
             android:name=".AdminVIN_Inicio"
             android:exported="false" />
         <activity

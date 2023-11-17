@@ -6,6 +6,11 @@ android {
     namespace 'com.example.dual'
     compileSdk 33
 
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
     defaultConfig {
         applicationId "com.example.dual"
         minSdk 31

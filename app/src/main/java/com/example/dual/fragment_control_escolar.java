@@ -14,11 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class fragment_control_escolar extends Fragment {
 
     TextView datos_controlEscolar;
     Button tramite;
-
+    private FloatingActionButton floatingActionButton;
+    Intent intent;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_control_escolar, container, false);
@@ -26,6 +29,14 @@ public class fragment_control_escolar extends Fragment {
         //Spinner
         Spinner spinner = v.findViewById(R.id.spinner_list);
         final TextView textView = v.findViewById(R.id.texto_spinner);
+
+        floatingActionButton = v.findViewById(R.id.floatingActionButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirChat();
+            }
+        });
 
         tramite = (Button) v.findViewById(R.id.boton_tramite);
         tramite.setOnClickListener(new View.OnClickListener() {
@@ -162,5 +173,10 @@ public class fragment_control_escolar extends Fragment {
         });
 
         return v;
+    }
+
+    private void abrirChat() {
+        intent = new Intent(getActivity(), chatBot_inicio.class);
+        startActivity(intent);
     }
 }
