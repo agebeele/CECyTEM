@@ -75,6 +75,18 @@ public class ChatBot {
                     "\n -Cambio de Grupo: Deberas esperar en el periodo vacacional por semestre." +
                     "\n -Cambio de Plantel: Deberas esperar en el periodo vacacional por semestre." +
                     "\n -Cambio de Carrera: Deberas esperar en el periodo vacacional por semestre.");
+            keywordResponses.put("precio","El precio de los documentos son los siguientes:" +
+                    "\n -Duplicado de Credencial: $64." +
+                    "\n -Constancia de estudios con o sin tira de materias: $53" +
+                    "\n -Certificado: $164" +
+                    "\n -Certificafo parcial: $164" +
+                    "\n -Duplicado de certificado: $164" +
+                    "\n -Titulo Profesional: $392" +
+                    "\n -Seguro contra accidentes: $42" +
+                    "\n -Seminario de Titulacion: $286" +
+                    "\n -Examen Extraordinario 1: $143" +
+                    "\n -Examen Extraordinario 2: $143" +
+                    "\n -Examen Extraordinario 3 (Titulo de suficiencia): $154");
         }
 
         public String getResponse(String userMessage) {
