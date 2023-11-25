@@ -1,9 +1,12 @@
 package com.example.dual;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +16,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Activity_Login extends AppCompatActivity {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+public class Activity_Login extends AppCompatActivity {
+    String crud;
+    WebService obj = new WebService();
     TextView sitioOfical;
     EditText usuario, contra;
     Button mostrarAdmin;
@@ -51,11 +59,6 @@ public class Activity_Login extends AppCompatActivity {
                 try {
                     // URL de la página que quieres abrir
                     String url = "https://cecytem.mx/deo/gui/LogIn.jsp";
-
-                    // Verifica si la URL es válida
-                    if (!url.startsWith("http://") && !url.startsWith("https://")) {
-                        url = "http://" + url;
-                    }
 
                     // Crea un Intent con la acción ACTION_VIEW y la URL como datos de URI
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
@@ -115,11 +118,60 @@ public class Activity_Login extends AppCompatActivity {
         builder.show();
     }
 
-    public void iniciarSesion(View view) {
-        Intent iniciar = new Intent(Activity_Login.this, Activity_Inicio.class);
-        startActivity(iniciar);
+    public void login(View view) {
+        if (usuario.getText().toString().isEmpty() || contra.getText().toString().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Datos Faltantes", Toast.LENGTH_LONG).show();
+        } else {
+            crud = "log";
+            new MiAsyncTask().execute(crud, usuario.getText().toString(), contra.getText().toString());
+        }
+    }
+    class MiAsyncTask extends AsyncTask<String, String, Void> {
+        @Override
+        protected Void doInBackground(String... parameter) {
+            String msj = null;
+            switch (parameter[0]) {
+                case "log":
+                    msj = obj.login(parameter[1], parameter[2]);
+                    publishProgress(msj);
+                    break;
+            }
+            return null;
+        }
 
-        Toast.makeText(Activity_Login.this, "Bienvenido/a",Toast.LENGTH_SHORT).show();
+        @Override
+        protected void onProgressUpdate(String... progress) {
+            super.onProgressUpdate(progress);
+            try {
+                JSONArray jArray = new JSONArray(progress[0]);
+                JSONObject json_data = null;
+                for (int i = 0; i < jArray.length(); i++) {
+                    json_data = jArray.getJSONObject(i);
+                }
+
+                // Obtener la matrícula del JSON
+                String matricula = json_data.getString("matricula");
+
+                // Resto del código para redireccionar a la próxima actividad
+                usuario.setText(matricula);
+                contra.setText(json_data.getString("curp"));
+                Toast.makeText(Activity_Login.this, "Bienvenido...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Activity_Login.this, Activity_Inicio.class);
+                startActivity(intent);
+                finish();
+
+                // Guardar la matrícula en SharedPreferences al iniciar sesión
+                SharedPreferences preferences = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("matricula", matricula);
+                editor.apply();
+
+            } catch (JSONException e) {
+                usuario.setText("");
+                contra.setText("");
+                Toast.makeText(getApplicationContext(), progress[0], Toast.LENGTH_LONG).show();
+            }
+        }
     }
     public void registrarUsuario(View view) {
         Intent registrar = new Intent(Activity_Login.this, Activity_Registro.class);
@@ -134,4 +186,5 @@ public class Activity_Login extends AppCompatActivity {
         Intent iniciar = new Intent(Activity_Login.this, Activity_Egresado  .class);
         startActivity(iniciar);
     }
+
 }

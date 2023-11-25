@@ -9,13 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 public class Activity_Aspirantes extends AppCompatActivity {
+    //Declaración de los TextView
     TextView informacion, requisitos, datos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aspirantes);
-
+    //Inicializacion de el arreglo de las imagenes con sus ID.
         int[] images = {R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1,
                 R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1,
                 R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1,

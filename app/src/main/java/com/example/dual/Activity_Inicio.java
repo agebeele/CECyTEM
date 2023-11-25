@@ -19,6 +19,13 @@ public class Activity_Inicio extends AppCompatActivity {
         binding = ActivityInicioBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Iniciar transacción de fragmento solo si savedInstanceState es nulo
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(binding.frameLayout.getId(), new fragment_inicio())
+                    .commit();
+        }
+
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.Inicio) {
                 replaceFragment(new fragment_inicio());

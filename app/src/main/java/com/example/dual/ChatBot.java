@@ -10,7 +10,8 @@ public class ChatBot {
             // Inicializar el mapa de respuestas basadas en palabras clave
             keywordResponses = new HashMap<>();
             keywordResponses.put("hola", "¡Hola! ¿En qué puedo ayudarte?");
-            keywordResponses.put("matrícula", "Puedes consultar tu matricula en el portal DEO.");
+            keywordResponses.put("no me se mi matrícula", "Puedes consultar tu matricula en el departamento de Control Escolar o " +
+                    "en el portal DEO, este es el enlace:");
             keywordResponses.put("credencial", "Para reponer una credencial son necesarios los siguientes datos:" +
                     "\n - Nombre completo." +
                     "\n - Grupo." +
@@ -67,7 +68,15 @@ public class ChatBot {
                     "\n -Motivo por el cual quieres hacer tu cambio" +
                     "\n -Nombre o firma del alumno/a");
             keywordResponses.put("gracias", "Fue un placer. Que tengas buen dia");
-            keywordResponses.put("Cuánto tiempo tarda", "El tramite del documento varia, por ejemplo:" +
+            keywordResponses.put("cuánto tiempo tarda", "El tramite del documento varia, cada uno va desde que lo tramitas, por ejemplo:" +
+                    "\n -Credencial: 1 dia." +
+                    "\n -Constancia: 1 dia." +
+                    "\n -Historial Academico 1 dia." +
+                    "\n -Cambio de Turno: Deberas esperar en el periodo vacacional por semestre." +
+                    "\n -Cambio de Grupo: Deberas esperar en el periodo vacacional por semestre." +
+                    "\n -Cambio de Plantel: Deberas esperar en el periodo vacacional por semestre." +
+                    "\n -Cambio de Carrera: Deberas esperar en el periodo vacacional por semestre.");
+            keywordResponses.put("cuando estara listo", "El tramite del documento varia, cada uno va desde que lo tramitas, por ejemplo:" +
                     "\n -Credencial: 1 dia." +
                     "\n -Constancia: 1 dia." +
                     "\n -Historial Academico 1 dia." +
@@ -87,6 +96,8 @@ public class ChatBot {
                     "\n -Examen Extraordinario 1: $143" +
                     "\n -Examen Extraordinario 2: $143" +
                     "\n -Examen Extraordinario 3 (Titulo de suficiencia): $154");
+            keywordResponses.put("no tengo seguro","Para adquirir tu numero de seguridad social, debes de realizar los siguientes pasos");
+            keywordResponses.put("no tengo numero de seguridad social","Para adquirir tu numero de seguridad social, debes de realizar los siguientes pasos");
         }
 
         public String getResponse(String userMessage) {
