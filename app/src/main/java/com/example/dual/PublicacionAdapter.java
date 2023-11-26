@@ -1,21 +1,27 @@
 package com.example.dual;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class PublicacionAdapter extends RecyclerView.Adapter<PublicacionAdapter.PublicacionViewHolder> {
-    private List<item_publicacion>itemPublicacionList;
+    //private List<item_publicacion>itemPublicacionList;
+    private List<String> tituloList;
+    private List<String> descripcionList;
+    private List<String> fechaList;
+    private List<String> horaList;
+    private List<String> imageList;
 
-    public PublicacionAdapter(List<item_publicacion> itemPublicacionList) {
-        this.itemPublicacionList = itemPublicacionList;
+    public PublicacionAdapter(List<String> tituloList, List<String> descripcionList,List<String> fechaList,List<String> horaList,List<String> imageList) {
+        this.tituloList = tituloList; this.descripcionList = descripcionList; this.fechaList = fechaList; this.horaList = horaList;
+        this.imageList = imageList;
     }
 
     @NonNull
@@ -27,17 +33,18 @@ public class PublicacionAdapter extends RecyclerView.Adapter<PublicacionAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull PublicacionViewHolder holder, int position) {
-        item_publicacion itemPublicacion = itemPublicacionList.get(position);
-        holder.imagen.setImageResource(itemPublicacion.getImagen());
-        holder.titulo.setText(itemPublicacion.getTitulo());
-        holder.descripcion.setText(itemPublicacion.getDescripcion());
-        holder.fecha.setText(itemPublicacion.getFecha());
-        holder.hora.setText(itemPublicacion.getHora());
+        //item_publicacion itemPublicacion = itemPublicacionList.get(position);
+
+        holder.imagen.setImageResource(Integer.parseInt(imageList.get(position)));
+        holder.titulo.setText(tituloList.get(position));
+        holder.descripcion.setText(descripcionList.get(position));
+        holder.fecha.setText(fechaList.get(position));
+        holder.hora.setText(horaList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return itemPublicacionList.size();
+        return tituloList.size();
     }
 
     public static class PublicacionViewHolder extends RecyclerView.ViewHolder{

@@ -125,4 +125,42 @@ public class WebService {
         }
         return aux;
     }
+    public String muroPublicaciones() {
+        String aux = "";
+        try {
+            URL url = new URL("http://192.168.0.9:80/conexion_cecytem/publicaciones_buscar.php");
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+            OutputStreamWriter datSal = new OutputStreamWriter(conexion.getOutputStream());
+            String data = "id=" + URLEncoder.encode("1", "UTF-8");;
+            datSal.write(data);
+            datSal.flush();
+            datSal.close();
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                String linea = reader.readLine();
+                while (linea != null) {
+                    aux = aux + linea; // Concatenar datos línea por línea
+                    linea = reader.readLine(); // Leer siguiente línea
+                }
+                reader.close(); // Cerrar buffer de lectura
+                if (aux.equals("2002")) {
+                    aux = "ERROR DE CONEXION AL SERVIDOR DE DATOS";
+                } else if (aux.equals("001")) {
+                    aux = "Sin ID para validar";
+                } else if (aux.equals("000")) {
+                    aux = "No se pudo mostrar la ID";
+                } else if (aux.equals("010")) {
+                    aux = "No se encontraron resultados";
+                }
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
 }

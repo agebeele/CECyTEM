@@ -1,6 +1,7 @@
 package com.example.dual;
 
 public class item_publicacion {
+    /*
     private int imagen;
     private String titulo;
     private String descripcion;
@@ -36,4 +37,5 @@ public class item_publicacion {
         this.fecha = fecha;
         this.hora = hora;
     }
+    */
 }
