@@ -12,10 +12,16 @@ import java.util.List;
 
 public class AdapterCE extends RecyclerView.Adapter<AdapterCE.AdapterCEViewHolder> {
 
-    private List<item_ce> item_ceList;
+    //private List<item_ce> item_ceList;
+    private List<String> tituloList;
+    private List<String> descripcionList;
+    private List<String> fechaList;
+    private List<String> horaList;
+    private List<String> imageList;
 
-    public AdapterCE(List<item_ce> item_ceList) {
-        this.item_ceList = item_ceList;
+    public AdapterCE(List<String> tituloList, List<String> descripcionList,List<String> fechaList,List<String> horaList,List<String> imageList) {
+        this.tituloList = tituloList; this.descripcionList = descripcionList; this.fechaList = fechaList; this.horaList = horaList;
+        this.imageList = imageList;
     }
 
     @NonNull
@@ -27,17 +33,18 @@ public class AdapterCE extends RecyclerView.Adapter<AdapterCE.AdapterCEViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull AdapterCE.AdapterCEViewHolder holder, int position) {
-        item_ce itemce = item_ceList.get(position);
-        holder.imagen.setImageResource(itemce.getImagen());
-        holder.titulo.setText(itemce.getTitulo());
-        holder.descripcion.setText(itemce.getDescripcion());
-        holder.fecha.setText(itemce.getFecha());
-        holder.hora.setText(itemce.getHora());
+        // item_ce itemce = item_ceList.get(position);
+
+        holder.imagen.setImageResource(Integer.parseInt(imageList.get(position)));
+        holder.titulo.setText(tituloList.get(position));
+        holder.descripcion.setText(descripcionList.get(position));
+        holder.fecha.setText(fechaList.get(position));
+        holder.hora.setText(horaList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return item_ceList.size();
+        return tituloList.size();
     }
     public static class AdapterCEViewHolder extends RecyclerView.ViewHolder{
         ImageView imagen;
