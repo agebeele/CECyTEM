@@ -32,6 +32,9 @@ public class FragmentCE_Inicio extends Fragment {
         item_ceList = generatePublicacionItems();
 
         recyclerView = v.findViewById(R.id.recyclerView_inicio_ce);
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), R.drawable.divider_line);
+        recyclerView.addItemDecoration(itemDecoration);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         adapterCE = new AdapterCE(item_ceList);

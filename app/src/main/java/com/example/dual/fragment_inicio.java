@@ -40,6 +40,10 @@ public class fragment_inicio extends Fragment {
         //itemPublicacionList = generatePublicacionItems();
 
         recyclerView = v.findViewById(R.id.recyclerView_inicio);
+
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), R.drawable.divider_line);
+        recyclerView.addItemDecoration(itemDecoration);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         myAdapter = new PublicacionAdapter(titloList, descripcionList, horaList, fechaList, imageList);

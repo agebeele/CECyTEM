@@ -32,6 +32,12 @@
         android:layout_marginEnd="10dp"
         android:layout_marginTop="60dp">
 
+        <View
+            android:id="@+id/separator_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_inicio_ce"
             android:layout_width="match_parent"
