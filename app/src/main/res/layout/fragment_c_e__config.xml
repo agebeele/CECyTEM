@@ -31,7 +31,7 @@
                 android:id="@+id/configuracion_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Configuracion CE"
+                android:text="Configuración Control Escolar"
                 android:textAlignment="center"
                 android:textColor="@color/verde_2"
                 android:textStyle="bold"
@@ -127,7 +127,7 @@
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/boton_cerrarSesion"
+                android:id="@+id/boton_cerrarSesionCE"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:backgroundTint="#FFFFFF"

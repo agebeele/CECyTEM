@@ -21,6 +21,13 @@ public class AdminVIN_Inicio extends AppCompatActivity {
         bindingVIN = ActivityAdminVinInicioBinding.inflate(getLayoutInflater());
         setContentView(bindingVIN.getRoot());
 
+        // Iniciar transacción de fragmento solo si savedInstanceState es nulo
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(bindingVIN.frameLayoutVIN.getId(), new FragmentVIN_Inicio())
+                    .commit();
+        }
+
         bindingVIN.bottomNavigationViewVIN.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.InicioVIN) {
                 replaceFragment(new FragmentVIN_Inicio());

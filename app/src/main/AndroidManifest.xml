@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission-sdk-23 android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -16,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".agregarItem_VIN"
+            android:exported="false" />
+        <activity
+            android:name=".AdapterVIN"
+            android:exported="false" />
         <activity
             android:name=".agregarItem_CE"
             android:exported="false" />

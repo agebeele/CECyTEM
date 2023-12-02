@@ -21,6 +21,13 @@ public class AdminCE_Inicio extends AppCompatActivity {
         bindingCE = ActivityAdminCeInicioBinding.inflate(getLayoutInflater());
         setContentView(bindingCE.getRoot());
 
+        // Iniciar transacción de fragmento solo si savedInstanceState es nulo
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(bindingCE.frameLayoutCE.getId(), new FragmentCE_Inicio())
+                    .commit();
+        }
+
         bindingCE.bottomNavigationViewCE.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.Inicio_CE) {
                 replaceFragment(new FragmentCE_Inicio());
