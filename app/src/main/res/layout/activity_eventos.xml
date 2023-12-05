@@ -19,7 +19,7 @@
             android:id="@+id/textView18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Agrega recordatorios"
             android:textAlignment="center"
             android:textColor="@color/verde_2"
@@ -30,20 +30,30 @@
             android:id="@+id/datePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:datePickerMode="calendar"
+            android:dayOfWeekTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:hapticFeedbackEnabled="false"
+            android:headerBackground="@color/verde_1"
+            android:headerDayOfMonthTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:headerMonthTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:headerYearTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:yearListItemTextAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <EditText
             android:id="@+id/eventTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:hint="Título del evento" />
 
         <EditText
             android:id="@+id/eventDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:hint="Descripción del evento" />
 
         <LinearLayout

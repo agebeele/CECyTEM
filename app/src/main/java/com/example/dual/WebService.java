@@ -163,4 +163,113 @@ public class WebService {
         }
         return aux;
     }
+    public String login_admin(String matricula, String curp) {
+        String aux = "";
+        try {
+            URL url = new URL("http://192.168.0.9:80/conexion_cecytem/login_admin.php");
+
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+            OutputStreamWriter data1 = new OutputStreamWriter(conexion.getOutputStream());
+
+            String data = "matricula=" + URLEncoder.encode(matricula, "UTF-8")
+                    +  "&curp=" + URLEncoder.encode(curp, "UTF-8");
+
+            data1.write(data);
+            data1.flush();
+            data1.close();
+
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                String linea = reader.readLine();
+                while (linea != null) {
+                    aux = aux + linea; // Concatenar datos línea por línea
+                    linea = reader.readLine(); // Leer siguiente línea
+                }
+                reader.close(); // Cerrar buffer de lectura
+                if (aux.equals("2002")) {
+                    aux = "ERROR DE CONEXION AL SERVIDOR DE DATOS";
+                } else if (aux.equals("001")) {
+                    aux = "Correo sin validar";
+                } else if (aux.equals("000")) {
+                    aux = "No se pudo mostrar la contraseña";
+                } else if (aux.equals("010")) {
+                    aux = "El Usuario o Contraseña no existe";
+                }
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
+    public String agregarEvento(String titulo, String descripcion, String fecha) {
+        String aux = "";
+        try {
+            URL url = new URL("http://192.168.0.9:80/conexion_cecytem/eventos.php");
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+
+            OutputStreamWriter datSal = new OutputStreamWriter(conexion.getOutputStream());
+            String data = "titulo=" + URLEncoder.encode(titulo, "UTF-8") +
+                    "&descripcion=" + URLEncoder.encode(descripcion, "UTF-8") +
+                    "&fecha=" + URLEncoder.encode(fecha, "UTF-8");
+            datSal.write(data);
+            datSal.flush();
+            datSal.close();
+
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                // Manejar la respuesta del servidor si es necesario
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
+    public String obtenerEventos(String fecha) {
+        String aux = "";
+        try {
+                URL url = new URL("http://192.168.0.9:80/conexion_cecytem/mostrar_eventos.php");
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+
+            OutputStreamWriter datSal = new OutputStreamWriter(conexion.getOutputStream());
+            String data = "fecha=" + URLEncoder.encode(fecha, "UTF-8");
+            datSal.write(data);
+            datSal.flush();
+            datSal.close();
+
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                // Leer la respuesta del servidor
+                BufferedReader in = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+
+                in.close();
+                aux = response.toString();
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
+
+
 }

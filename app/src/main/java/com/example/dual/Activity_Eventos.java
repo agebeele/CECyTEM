@@ -1,31 +1,30 @@
 package com.example.dual;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.SharedPreferences;
-import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Field;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 public class Activity_Eventos extends AppCompatActivity {
-
     private DatePicker datePicker;
     private EditText eventTitle;
     private EditText eventDescription;
     private TextView eventTextView;
-
-    private SharedPreferences sharedPreferences;
+    private WebService obj = new WebService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +36,6 @@ public class Activity_Eventos extends AppCompatActivity {
         eventDescription = findViewById(R.id.eventDescription);
         eventTextView = findViewById(R.id.eventTextView);
 
-        sharedPreferences = getPreferences(MODE_PRIVATE);
-
         Button saveButton = findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,129 +43,115 @@ public class Activity_Eventos extends AppCompatActivity {
                 guardarEvento();
             }
         });
-        Button borrarEvento = findViewById(R.id.borrarEvento);
-        borrarEvento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                borrarEvento();
-            }
-        });
 
-        datePicker.setOnDateChangedListener((view, year, monthOfYear, dayOfMonth) -> {
-            String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
-            mostrarEventos(selectedDate);
-            cambiarColorDiaConEvento(selectedDate);
-        });
-
-        eventTitle.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        // Configurar el DatePickerDialog
+        Calendar calendar = Calendar.getInstance();
+        datePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), null);
+        datePicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
             @Override
-            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-                if (actionId == EditorInfo.IME_ACTION_NEXT) {
-                    // Mover el foco al siguiente EditText
-                    eventDescription.requestFocus();
-                    return true;
-                }
-                return false;
+            public void onDateChanged(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
+                actualizarEventos(year, monthOfYear, dayOfMonth);
             }
         });
     }
 
     private void guardarEvento() {
-        String title = eventTitle.getText().toString();
-        String description = eventDescription.getText().toString();
-        String date = getDateFromDatePicker(datePicker);
+        String titulo = eventTitle.getText().toString();
+        String descripcion = eventDescription.getText().toString();
+        String fecha = obtenerFechaDatePicker();
 
-        // Verificar si los campos de texto no están vacíos
-        if (title.isEmpty() || description.isEmpty()) {
-            Toast.makeText(this, "Completa todos los campos antes de guardar el evento", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // Almacenar el evento en SharedPreferences
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(date, "Evento: " + title + "\n Descripción: " + description);
-        editor.apply();
-
-        Toast.makeText(this, "Evento guardado", Toast.LENGTH_SHORT).show();
-
-        eventTitle.setText("");
-        eventDescription.setText("");
-
-        // Actualizar el color del día en el DatePicker
-        cambiarColorDiaConEvento(date);
-    }
-    public void borrarEvento() {
-        String date = getDateFromDatePicker(datePicker);
-
-        // Verificar si existe un evento en la fecha seleccionada
-        if (sharedPreferences.contains(date)) {
-            // Eliminar el evento existente
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.remove(date);
-            editor.apply();
-            Toast.makeText(this, "Evento eliminado", Toast.LENGTH_SHORT).show();
-
-            // Limpiar la vista de eventos
-            eventTextView.setText("No hay ningún evento para hoy");
-
-            // Actualizar el color del día en el DatePicker
-            cambiarColorDiaConEvento(date);
-        } else {
-            Toast.makeText(this, "No hay evento para borrar en esta fecha", Toast.LENGTH_SHORT).show();
-        }
+        // Llama al AsyncTask para enviar datos al servidor
+        new GuardarEventoTask().execute(titulo, descripcion, fecha);
     }
 
-    private void mostrarEventos(String selectedDate) {
-        // Obtener el evento desde SharedPreferences
-        String evento = sharedPreferences.getString(selectedDate, "");
+    private void actualizarEventos(int year, int monthOfYear, int dayOfMonth) {
+        String fechaSeleccionada = obtenerFecha(year, monthOfYear, dayOfMonth);
 
-        if (!evento.isEmpty()) {
-            eventTextView.setText(evento);
-        } else {
-            eventTextView.setText("No hay ningún evento para hoy");
-        }
+        // Llama al AsyncTask para obtener eventos del servidor
+        new ObtenerEventosTask().execute(fechaSeleccionada);
     }
 
-    private String getDateFromDatePicker(DatePicker datePicker) {
+    private String obtenerFechaDatePicker() {
         int day = datePicker.getDayOfMonth();
-        int month = datePicker.getMonth() + 1;
+        int month = datePicker.getMonth() + 1; // Se suma 1 porque enero es 0
         int year = datePicker.getYear();
-        return day + "/" + month + "/" + year;
+
+        // Formatea la fecha en formato "yyyy-MM-dd"
+        return String.format(Locale.getDefault(), "%04d-%02d-%02d", year, month, day);
     }
 
-    private void cambiarColorDiaConEvento(String selectedDate) {
-        // Cambiar el color del texto del día en el DatePicker si hay un evento
-        if (hayEvento(selectedDate)) {
-            int colorEvento = Color.RED; // Cambia esto según tus preferencias de color
 
+    private String obtenerFecha(int year, int month, int day) {
+        return year + "-" + String.format("%02d", month) + "-" + String.format("%02d", day);
+    }
+
+    private class GuardarEventoTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            // params[0]: titulo, params[1]: descripcion, params[2]: fecha
+            return obj.agregarEvento(params[0], params[1], params[2]);
+        }
+
+        @Override
+        protected void onPostExecute(String resultado) {
+            // Muestra el resultado en un mensaje Toast
+            Toast.makeText(Activity_Eventos.this, "Evento agregado" + resultado, Toast.LENGTH_SHORT).show();
+
+            // Vacía los campos del título y la descripción
+            eventTitle.setText("");
+            eventDescription.setText("");
+
+            // Actualiza los eventos para mostrar el nuevo evento agregado
+            actualizarEventos(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
+        }
+    }
+
+    private class ObtenerEventosTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            // params[0]: fecha seleccionada
+            String fechaSeleccionada = obtenerFechaDatePicker();
+            Log.d("FechaSeleccionada", fechaSeleccionada);
+
+            return obj.obtenerEventos(fechaSeleccionada);
+        }
+
+        @Override
+        protected void onPostExecute(String eventosJson) {
             try {
-                Field ll = datePicker.getClass().getDeclaredField("mDaySpinner");
-                ll.setAccessible(true);
-                Object llObj = ll.get(datePicker);
+                // Convierte el string JSON a un objeto JSON
+                JSONArray eventosArray = new JSONArray(eventosJson);
 
-                if (llObj instanceof LinearLayout) {
-                    LinearLayout llInstance = (LinearLayout) llObj;
+                // Muestra solo los eventos que coinciden con la fecha seleccionada
+                StringBuilder eventosMostrados = new StringBuilder();
 
-                    for (int i = 0; i < llInstance.getChildCount(); i++) {
-                        if (llInstance.getChildAt(i) instanceof NumberPicker) {
-                            NumberPicker dayPicker = (NumberPicker) llInstance.getChildAt(i);
-                            for (int j = 0; j < dayPicker.getChildCount(); j++) {
-                                if (dayPicker.getChildAt(j) instanceof EditText) {
-                                    EditText dayEditText = (EditText) dayPicker.getChildAt(j);
-                                    dayEditText.setTextColor(colorEvento);
-                                }
-                            }
-                        }
+                for (int i = 0; i < eventosArray.length(); i++) {
+                    JSONObject evento = eventosArray.getJSONObject(i);
+
+                    // Obtén la fecha del evento
+                    String fechaEvento = evento.getString("fecha");
+                    Log.d("FechaEvento", fechaEvento);
+
+                    // Compara las fechas formateadas
+                    if (fechaEvento.equals(fechaEvento)) {
+                        // Agrega la información del evento al StringBuilder
+                        String titulo = evento.getString("titulo");
+                        String descripcion = evento.getString("descripcion");
+                        eventosMostrados.append("Título: ").append(titulo).append("\nDescripción: ").append(descripcion).append("\n\n");
                     }
                 }
-            } catch (Exception e) {
+
+                // Muestra los eventos en el TextView
+                if (eventosMostrados.length() > 0) {
+                    eventTextView.setText(eventosMostrados.toString());
+                } else {
+                    eventTextView.setText("No hay eventos para esta fecha.");
+                    Log.d("InfoEvento", "No se encontraron eventos para la fecha seleccionada.");
+                }
+
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-    }
-    private boolean hayEvento(String selectedDate) {
-        // Implementa la lógica para determinar si hay un evento en la fecha seleccionada
-        // Por ejemplo, verifica si existe un evento en tu fuente de datos
-        return sharedPreferences.contains(selectedDate);
     }
 }
