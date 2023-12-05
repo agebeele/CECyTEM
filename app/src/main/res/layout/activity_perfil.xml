@@ -217,7 +217,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView63"
+                            android:id="@+id/txt_municipio"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -242,7 +242,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView65"
+                            android:id="@+id/txt_colonia"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -268,7 +268,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView66"
+                            android:id="@+id/txt_calle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -293,7 +293,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView53"
+                            android:id="@+id/txt_exterior"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -318,7 +318,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView55"
+                            android:id="@+id/txt_interior"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -343,7 +343,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView57"
+                            android:id="@+id/txt_codigoPostal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -368,7 +368,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView59"
+                            android:id="@+id/txt_telefonoCasa"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

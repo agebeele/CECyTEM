@@ -27,7 +27,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="60dp">
@@ -44,7 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/separator_line"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
 
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

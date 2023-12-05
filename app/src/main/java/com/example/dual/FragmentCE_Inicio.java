@@ -111,15 +111,10 @@ public class FragmentCE_Inicio extends Fragment {
                     descripcionList.add(json_data.getString("descripcion"));
                     fechaList.add(json_data.getString("fecha"));
                     horaList.add(json_data.getString("hora"));
+
+                    // Agrega una nueva imagen para cada elemento
+                    imageList.add(String.valueOf(R.drawable.cecytem));
                 }
-                imageList.add(String.valueOf(R.drawable.cecytem));
-                imageList.add(String.valueOf(R.drawable.cecytem));
-                imageList.add(String.valueOf(R.drawable.cecytem));
-                imageList.add(String.valueOf(R.drawable.cecytem));
-                imageList.add(String.valueOf(R.drawable.cecytem));
-                imageList.add(String.valueOf(R.drawable.cecytem));
-                imageList.add(String.valueOf(R.drawable.cecytem));
-                imageList.add(String.valueOf(R.drawable.cecytem));
             } catch (JSONException e) {
                 Toast.makeText(getActivity(), progress[0], Toast.LENGTH_LONG).show();
             }

@@ -1,10 +1,5 @@
 package com.example.dual;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,6 +9,11 @@ import android.view.View;
 import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class Activity_Nostros extends AppCompatActivity {
 
@@ -35,7 +35,7 @@ public class Activity_Nostros extends AppCompatActivity {
             mVideoView.setMediaController(new MediaController(this));
             mVideoView.requestFocus();
             mVideoView.start();
-            Toast.makeText(this, "Acepta permiso para ver el video", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Acepta permiso para ver el video", Toast.LENGTH_SHORT).show();
         } else {
 
 
