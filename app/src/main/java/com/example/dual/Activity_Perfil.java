@@ -52,8 +52,6 @@ public class Activity_Perfil extends AppCompatActivity {
             datosDomicilioTask.execute(matricula);
 
         }
-
-
     }
 
     class MiAsyncTask extends AsyncTask<String, String, String> {

@@ -35,30 +35,18 @@ public class adminCE_Perfil extends AppCompatActivity {
         String matricula = preferences.getString("matricula", "");
 
         if (!matricula.isEmpty()) {
-            MiAsyncTask datosAdminTask = new MiAsyncTask();
-            datosAdminTask.setTaskType("datosAdmin");
-            datosAdminTask.execute(matricula);
+            MiAsyncTask datosUserTask = new MiAsyncTask();
+            datosUserTask.execute(matricula);
         }
     }
-    class MiAsyncTask extends AsyncTask<String, String, String> {
-        private String taskType; // Variable para almacenar el tipo de tarea
 
-        // Setter para asignar el tipo de tarea
-        public void setTaskType(String taskType) {
-            this.taskType = taskType;
-        }
+    class MiAsyncTask extends AsyncTask<String, String, String> {
 
         @Override
         protected String doInBackground(String... parameter) {
-            String msj = null;
-            switch (taskType) {
-                case "datosAdmin":
-                    msj = obj.datosAdmin_CE(parameter[0]);
-                    break;
-                default:
-            }
-            return msj;
+            return obj.datosUsuario(parameter[0]);
         }
+
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
@@ -70,17 +58,16 @@ public class adminCE_Perfil extends AppCompatActivity {
                     boolean success = jsonObject.getBoolean("success");
 
                     if (success) {
-                        JSONArray admin = jsonObject.getJSONArray("data");
+                        JSONArray usuario = jsonObject.getJSONArray("data");
 
-                        if ("datosAdmin".equals(taskType)) {
-                            // Maneja los datos del usuario
-                            JSONObject adminData = admin.getJSONObject(0); // Obtén el primer objeto del JSONArray
-                            matriculaGeneral.setText(adminData.getString("matricula"));
-                            nombreGeneral.setText(adminData.getString("nombre"));
-                            nombre.setText(adminData.getString("nombre"));
-                            apellido_paterno.setText(adminData.getString("apellido_paterno"));
-                            apellido_materno.setText(adminData.getString("apellido_materno"));
-                        }
+                        // Maneja los datos del usuario
+                        JSONObject usuarioData = usuario.getJSONObject(0); // Obtén el primer objeto del JSONArray
+                        matriculaGeneral.setText(usuarioData.getString("matricula"));
+                        nombreGeneral.setText(usuarioData.getString("nombre"));
+                        nombre.setText(usuarioData.getString("nombre"));
+                        apellido_paterno.setText(usuarioData.getString("apellido_paterno"));
+                        apellido_materno.setText(usuarioData.getString("apellido_materno"));
+
                     } else {
                         // Maneja el caso de error o usuario no encontrado
                         String mensaje = jsonObject.getString("message");

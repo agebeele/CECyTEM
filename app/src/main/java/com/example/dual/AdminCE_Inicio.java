@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.dual.databinding.ActivityAdminCeInicioBinding;
 
 public class AdminCE_Inicio extends AppCompatActivity {
-
     ActivityAdminCeInicioBinding bindingCE;
 
     @Override

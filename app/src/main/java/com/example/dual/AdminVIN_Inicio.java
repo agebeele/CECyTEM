@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.dual.databinding.ActivityAdminVinInicioBinding;
 
 public class AdminVIN_Inicio extends AppCompatActivity {
-
     ActivityAdminVinInicioBinding bindingVIN;
 
     @Override
