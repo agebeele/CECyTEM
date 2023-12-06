@@ -26,6 +26,28 @@
         <item>Especialista en UI/UX: Ociel Josue Tabal Velasco</item>
         <item>Ingeniero de control de calidad (QA): Brandon Adrian Lopez Garcia</item>
     </string-array>
+
+    <array name="questions">
+
+        <item>Selecciona una pregunta</item>
+        <item>¿Cuando empiezo servicio social?</item>
+        <item>¿Cuántas horas debo hacer servicio social?</item>
+        <item>¿Qué pasa si no hago el servicio social?</item>
+        <item>¿Qué es una carta de aceptación?</item>
+        <item>¿En qué instituciones puedo hacer mi servicio social?</item>
+        <item>¿Cómo libero mi servicio?</item>
+        <item>¿Qué es un informe trimestral?</item>
+        <item>¿Cómo tramito mi beca de escolaridad?</item>
+        <item>¿Cuándo depositan la beca?</item>
+        <item>¿Dónde entregan la tarjeta?</item>
+
+        <!-- Agrega más preguntas según sea necesario -->
+    </array>
+
+    <string name="name_app">chatBot</string>
+    <string name="tiempo_question_1"/>
+    <string name="tiempo_question_2"/>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

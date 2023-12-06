@@ -19,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +28,8 @@ import org.json.JSONObject;
 public class fragment_vinculacion extends Fragment {
     TextView datos_controlEscolar, bienvenida;
     Button tramite;
+    Intent intent;
+    private FloatingActionButton floatingActionButton;
     WebService obj = new WebService();
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -34,6 +38,14 @@ public class fragment_vinculacion extends Fragment {
             //Spinner
         Spinner spinner = v.findViewById(R.id.spinner_list);
             final TextView textView = v.findViewById(R.id.texto_spinner);
+
+        floatingActionButton = v.findViewById(R.id.floatingActionButtonBot_Vin);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirChat();
+            }
+        });
 
             tramite = (Button) v.findViewById(R.id.boton_tramite);
             tramite.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +135,12 @@ public class fragment_vinculacion extends Fragment {
 
             return v;
         }
+
+    private void abrirChat() {
+        intent = new Intent(getActivity(), ChatBot_VinPrincipal.class);
+        startActivity(intent);
+    }
+
     class MiAsyncTask extends AsyncTask<String, String, String> {
         private SharedPreferences preferences;
 
@@ -180,5 +198,5 @@ public class fragment_vinculacion extends Fragment {
         }
 
     }
-    }
+}
 

@@ -19,6 +19,9 @@
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ChatBot_VinPrincipal"
+            android:exported="false" />
+        <activity
             android:name=".agregarItem_VIN"
             android:exported="false" />
         <activity

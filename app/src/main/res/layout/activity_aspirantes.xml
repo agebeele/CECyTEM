@@ -71,7 +71,7 @@
                         <androidx.viewpager2.widget.ViewPager2
                             android:id="@+id/viewPager"
                             android:layout_width="0dp"
-                            android:layout_height="150dp"
+                            android:layout_height="500dp"
                             android:layout_weight="1" />
 
                         <ImageView
@@ -86,63 +86,63 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/cafeteria" />
 
                         <ImageView
                             android:id="@+id/imageView3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/canchas" />
 
                         <ImageView
                             android:id="@+id/imageView4"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/edificioab" />
 
                         <ImageView
                             android:id="@+id/imageView5"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/edificioc" />
 
                         <ImageView
                             android:id="@+id/imageView6"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/edificiod" />
 
                         <ImageView
                             android:id="@+id/imageView7"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/edificiofe" />
 
                         <ImageView
                             android:id="@+id/imageView8"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/explanada" />
 
                         <ImageView
                             android:id="@+id/imageView9"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/futboll" />
 
                         <ImageView
                             android:id="@+id/imageView10"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/coacalco_imagen1" />
+                            app:srcCompat="@drawable/gym" />
                     </LinearLayout>
                 </HorizontalScrollView>
 

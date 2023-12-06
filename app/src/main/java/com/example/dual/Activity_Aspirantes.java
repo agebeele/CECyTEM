@@ -17,10 +17,10 @@ public class Activity_Aspirantes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aspirantes);
     //Inicializacion de el arreglo de las imagenes con sus ID.
-        int[] images = {R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1,
-                R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1,
-                R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1, R.drawable.coacalco_imagen1,
-                R.drawable.coacalco_imagen1};
+        int[] images = {R.drawable.coacalco_imagen1, R.drawable.cafeteria, R.drawable.canchas,
+                R.drawable.edificioab, R.drawable.edificioc, R.drawable.edificiod,
+                R.drawable.edificiofe, R.drawable.explanada, R.drawable.futboll,
+                R.drawable.gym};
 
         informacion = (TextView) findViewById(R.id.txt_informacion);
         datos = (TextView) findViewById(R.id.txt_datos);
