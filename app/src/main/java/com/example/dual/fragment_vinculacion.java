@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,6 +25,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
 
 public class fragment_vinculacion extends Fragment {
     TextView datos_controlEscolar, bienvenida;
@@ -77,7 +83,44 @@ public class fragment_vinculacion extends Fragment {
                     "\n - Registro de Eventos" +
                     "\n - Tramite de Servicio Social" );
 
-            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        // Obtén la fecha actual
+        Calendar fechaActual = Calendar.getInstance();
+
+// Establece las fechas de inicio y fin del período vacacional por semestre
+        Calendar fechaInicioVacaciones = Calendar.getInstance();
+        fechaInicioVacaciones.set(Calendar.YEAR, 2023); // Cambia el año según tu necesidad
+        fechaInicioVacaciones.set(Calendar.MONTH, Calendar.JULY); // Cambia el mes según tu necesidad
+        fechaInicioVacaciones.set(Calendar.DAY_OF_MONTH, 1); // Cambia el día según tu necesidad
+
+        Calendar fechaFinVacaciones = Calendar.getInstance();
+        fechaFinVacaciones.set(Calendar.YEAR, 2023); // Cambia el año según tu necesidad
+        fechaFinVacaciones.set(Calendar.MONTH, Calendar.AUGUST); // Cambia el mes según tu necesidad
+        fechaFinVacaciones.set(Calendar.DAY_OF_MONTH, 31); // Cambia el día según tu necesidad
+
+// Obtén el array de opciones desde los recursos
+        String[] opciones = getResources().getStringArray(R.array.spinner_vi);
+
+// Verifica si la fecha actual está dentro del período vacacional
+        if (fechaActual.after(fechaInicioVacaciones) && fechaActual.before(fechaFinVacaciones)) {
+            // Período vacacional, permitir todas las opciones en el Spinner
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                    requireActivity(), android.R.layout.simple_spinner_item, opciones);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(adapter);
+        } else {
+            // Fuera del período vacacional, filtra opciones específicas en el Spinner
+            List<String> opcionesFiltradas = new ArrayList<>(Arrays.asList(opciones));
+            opcionesFiltradas.remove("Tramite de Servicio Social");
+            opcionesFiltradas.remove("Tramite de Becas");
+
+            ArrayAdapter<String> adapterFiltrado = new ArrayAdapter<>(
+                    requireActivity(), android.R.layout.simple_spinner_item, opcionesFiltradas);
+            adapterFiltrado.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(adapterFiltrado);
+        }
+
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View selectedItemView, int position, long id) {
                     // Obtiene el item actual seleccionado
