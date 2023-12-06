@@ -7,35 +7,21 @@
     tools:context=".chatBot_inicio">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewCE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/fab"
-        android:paddingBottom="8dp"
+        android:layout_above="@+id/simple_spinner_itemCE"
+        android:clipToPadding="false"
         android:paddingTop="8dp"
-        android:clipToPadding="false"/>
+        android:paddingBottom="8dp" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:src="@android:drawable/ic_dialog_email"
-        app:backgroundTint="@color/verde_1" />
-
-    <EditText
-        android:id="@+id/inputEditText"
+    <Spinner
+        android:id="@+id/simple_spinner_itemCE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:translationX="10dp"
-        android:translationY="-20dp"
-        android:layout_toStartOf="@+id/fab"
-        android:hint="Escribe tu mensaje"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="29dp"
+        android:entries="@array/questionsCE" />
 </RelativeLayout>
 

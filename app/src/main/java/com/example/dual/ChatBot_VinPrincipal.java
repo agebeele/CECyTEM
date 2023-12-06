@@ -19,9 +19,9 @@ public class ChatBot_VinPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_bot_vin_principal);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerViewVIN);
         /*FloatingActionButton fab = findViewById(R.id.fab);*/
-        questionSpinner = findViewById(R.id.questionSpinner);
+        questionSpinner = findViewById(R.id.simple_spinner_itemVIN);
 
         chatBot_vinAdapter = new ChatBot_VINAdapter();
 
@@ -34,6 +34,7 @@ public class ChatBot_VinPrincipal extends AppCompatActivity {
                 R.array.questions,
                 android.R.layout.simple_spinner_item
         );
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         questionSpinner.setAdapter(adapter);
 

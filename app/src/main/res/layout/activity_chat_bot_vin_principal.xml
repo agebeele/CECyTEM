@@ -7,16 +7,16 @@
     tools:context=".ChatBot_VinPrincipal">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewVIN"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/questionSpinner"
+        android:layout_above="@+id/simple_spinner_itemVIN"
         android:clipToPadding="false"
         android:paddingTop="8dp"
         android:paddingBottom="8dp" />
 
     <Spinner
-        android:id="@+id/questionSpinner"
+        android:id="@+id/simple_spinner_itemVIN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

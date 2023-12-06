@@ -26,6 +26,8 @@
         <item>Especialista en UI/UX: Ociel Josue Tabal Velasco</item>
         <item>Ingeniero de control de calidad (QA): Brandon Adrian Lopez Garcia</item>
     </string-array>
+    //Vinculacion
+
 
     <array name="questions">
 
@@ -47,6 +49,28 @@
     <string name="name_app">chatBot</string>
     <string name="tiempo_question_1"/>
     <string name="tiempo_question_2"/>
+
+
+//Control Escolar
+    <array name="questionsCE">
+
+        <item>Selecciona una pregunta</item>
+        <item>¿Que precio tiene la reposicion de Credencial?</item>
+        <item>¿Que necesito para solicitar una Constancia?</item>
+        <item>¿Como me doy de alta en el seguro?</item>
+        <item>¿Cuando puedo hacer mi cambio de turno?</item>
+        <item>¿Cuando puedo hacer mi cambio de grupo?</item>
+        <item>¿Cuando puedo hacer mi cambio de carrera?</item>
+        <item>¿Cuando puedo hacer mi cambio de plantel?</item>
+        <item>¿Que debo de hacer si tengo que recursar una materia?</item>
+        <item>¿Que precio tienen los examenes de Estraordinario y Titulo de Suficiencia?</item>
+
+        <!-- Agrega más preguntas según sea necesario -->
+    </array>
+
+    <string name="name_ap">chatBot_ce</string>
+    <string name="tiempo_question_3"/>
+    <string name="tiempo_question_4"/>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
