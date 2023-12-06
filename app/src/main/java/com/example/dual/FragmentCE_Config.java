@@ -24,6 +24,14 @@ public class FragmentCE_Config extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_c_e__config, container, false);
 
+        myPerfil = (Button) v.findViewById(R.id.perfilBoton);
+        myPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cambiarPantalla_Perfil();
+            }
+        });
+
         cerrarSesion = (Button) v.findViewById(R.id.boton_cerrarSesionCE);
         cerrarSesion.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -40,6 +48,11 @@ public class FragmentCE_Config extends Fragment {
         });
 
         return v;
+    }
+
+    private void cambiarPantalla_Perfil() {
+        Intent cambio_perfil = new Intent(getActivity(),adminCE_Perfil.class);
+        startActivity(cambio_perfil);
     }
 
     private void cambioNosotros() {

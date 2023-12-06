@@ -19,6 +19,9 @@
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".adminCE_Perfil"
+            android:exported="false" />
+        <activity
             android:name=".ChatBot_VinPrincipal"
             android:exported="false" />
         <activity

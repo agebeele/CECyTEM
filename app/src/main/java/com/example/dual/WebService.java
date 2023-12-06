@@ -11,7 +11,7 @@ public class WebService {
     public String login(String matricula, String curp) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.1.113:80/conexion_cecytem/login_usuarios.php");
+            URL url = new URL("http://192.168.137.23:80/conexion_cecytem/login_usuarios.php");
 
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
@@ -54,7 +54,7 @@ public class WebService {
     public String registarUsuario (String matricula, String curp, String nombre, String paterno, String materno) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.1.113:80/conexion_cecytem/registro_usuarios.php");
+            URL url = new URL("http://192.168.137.23:80/conexion_cecytem/registro_usuarios.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -97,7 +97,7 @@ public class WebService {
     public String datosUsuario(String matricula) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.1.113:80/conexion_cecytem/mostrar_datos.php");
+            URL url = new URL("http://192.168.137.23:80/conexion_cecytem/mostrar_datos.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -127,7 +127,7 @@ public class WebService {
     public String muroPublicaciones() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.1.113:80/conexion_cecytem/publicaciones_buscar.php");
+            URL url = new URL("http://192.168.137.23:80/conexion_cecytem/publicaciones_buscar.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -165,7 +165,7 @@ public class WebService {
     public String login_admin(String matricula, String curp) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.1.113:80/conexion_cecytem/login_admin.php");
+            URL url = new URL("http://192.168.137.23:80/conexion_cecytem/login_admin.php");
 
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
@@ -208,7 +208,7 @@ public class WebService {
     public String agregarEvento(String titulo, String descripcion, String fecha) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.1.113:80/conexion_cecytem/eventos.php");
+            URL url = new URL("http://192.168.137.23:80/conexion_cecytem/eventos.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -236,7 +236,7 @@ public class WebService {
     public String obtenerEventos(String fecha) {
         String aux = "";
         try {
-                URL url = new URL("http://192.168.1.113:80/conexion_cecytem/mostrar_eventos.php");
+                URL url = new URL("http://192.168.137.23:80/conexion_cecytem/mostrar_eventos.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -272,7 +272,7 @@ public class WebService {
     public String datosDomicilio(String matricula) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.1.113:80/conexion_cecytem/mostrar_domicilio.php");
+            URL url = new URL("http://192.168.137.23:80/conexion_cecytem/mostrar_domicilio.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -299,5 +299,34 @@ public class WebService {
         }
         return aux;
     }
-
+    public String datosAdmin_CE(String matricula) {
+        String aux = "";
+        try {
+            URL url = new URL("http://192.168.137.23:80/conexion_cecytem/datosadmin_CE.php");
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+            OutputStreamWriter writer = new OutputStreamWriter(conexion.getOutputStream());
+            String data = "matricula=" + URLEncoder.encode(matricula, "UTF-8"); // Pasar el correo electrónico del usuario
+            writer.write(data);
+            writer.flush();
+            writer.close();
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                String linea = reader.readLine();
+                if (!linea.equals("010")) { // Verificar si no es un error de "No se encontraron resultados"
+                    aux = linea; // Recuperar el JSON con los datos del usuario
+                } else {
+                    aux = "No se encontraron resultados"; // Manejar el caso de usuario no encontrado
+                }
+                reader.close(); // Cerrar buffer de lectura
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
 }

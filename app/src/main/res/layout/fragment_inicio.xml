@@ -6,13 +6,13 @@
     android:background="@color/verde_1"
     tools:context=".Activity_Inicio">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
         android:layout_margin="10dp"
-        android:orientation="vertical">
+        app:cardCornerRadius="20dp">
 
+        <!-- TextView "Inicio" -->
         <TextView
             android:id="@+id/inicio_text"
             android:layout_width="match_parent"
@@ -23,24 +23,19 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="60dp">
-
         <!-- View para la línea de separación -->
         <View
             android:id="@+id/separator_line"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+            android:layout_marginTop="40dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/inicio_text" />
 
+        <!-- RecyclerView debajo del TextView y del separador -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_inicio"
+            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/separator_line"
