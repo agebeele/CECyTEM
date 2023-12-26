@@ -24,13 +24,13 @@
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".credencial_item"
+            android:name=".solicitudCredencial.credencial_item"
             android:exported="false" />
         <activity
-            android:name=".credencial_adapter"
+            android:name=".solicitudCredencial.credencial_adapter"
             android:exported="false" />
         <activity
-            android:name=".credencial_recycler"
+            android:name=".solicitudCredencial.credencial_recycler"
             android:exported="false" />
         <activity
             android:name=".SolicitudAdapter_CE"
@@ -42,103 +42,103 @@
             android:name=".TramitesAdapterCE"
             android:exported="false" />
         <activity
-            android:name=".adminCE_Perfil"
+            android:name=".adminCE.adminCE_Perfil"
             android:exported="false" />
         <activity
-            android:name=".ChatBot_VinPrincipal"
+            android:name=".chatBotVIN.ChatBot_VinPrincipal"
             android:exported="false" />
         <activity
-            android:name=".agregarItem_VIN"
+            android:name=".adminVIN.agregarItem_VIN"
             android:exported="false" />
         <activity
-            android:name=".AdapterVIN"
+            android:name=".adminVIN.AdapterVIN"
             android:exported="false" />
         <activity
-            android:name=".agregarItem_CE"
+            android:name=".adminCE.agregarItem_CE"
             android:exported="false" />
         <activity
-            android:name=".AdapterCE"
+            android:name=".adminCE.AdapterCE"
             android:exported="false" />
         <activity
-            android:name=".chatBot_inicio"
+            android:name=".chatBotCE.chatBot_inicio"
             android:exported="false" />
         <activity
-            android:name=".AdminVIN_Inicio"
+            android:name=".adminVIN.AdminVIN_Inicio"
             android:exported="false" />
         <activity
-            android:name=".AdminCE_Inicio"
+            android:name=".adminCE.AdminCE_Inicio"
             android:exported="false" />
         <activity
-            android:name=".AdminVin_Login"
+            android:name=".adminVIN.AdminVin_Login"
             android:exported="false" />
         <activity
-            android:name=".AdminCE_Login"
+            android:name=".adminCE.AdminCE_Login"
             android:exported="false" />
         <activity
-            android:name=".Activity_Eventos"
+            android:name=".alumnos.Activity_Eventos"
             android:exported="false" />
         <activity
-            android:name=".Activity_Perfil"
+            android:name=".alumnos.Activity_Perfil"
             android:exported="false" />
         <activity
-            android:name=".Activity_Nostros"
+            android:name=".alumnos.Activity_Nostros"
             android:exported="false" />
         <activity
-            android:name=".item_publicacion"
+            android:name=".alumnos.item_publicacion"
             android:exported="false" />
         <activity
-            android:name=".PublicacionAdapter"
+            android:name=".alumnos.PublicacionAdapter"
             android:exported="false" />
         <activity
-            android:name=".Activity_RecorridoGeorreferenciado"
+            android:name=".aspirantes.Activity_RecorridoGeorreferenciado"
             android:exported="false" />
         <activity
-            android:name=".formulario_social"
+            android:name=".formularios.formulario_social"
             android:exported="false" />
         <activity
-            android:name=".formulario_eventos"
+            android:name=".formularios.formulario_eventos"
             android:exported="false" />
         <activity
-            android:name=".formulario_becas"
+            android:name=".formularios.formulario_becas"
             android:exported="false" />
         <activity
-            android:name=".formulario_plantel"
+            android:name=".formularios.formulario_plantel"
             android:exported="false" />
         <activity
-            android:name=".formulario_grupo"
+            android:name=".formularios.formulario_grupo"
             android:exported="false" />
         <activity
-            android:name=".formulario_carrera"
+            android:name=".formularios.formulario_carrera"
             android:exported="false" />
         <activity
-            android:name=".formulario_turno"
+            android:name=".formularios.formulario_turno"
             android:exported="false" />
         <activity
-            android:name=".formulario_historial"
+            android:name=".formularios.formulario_historial"
             android:exported="false" />
         <activity
-            android:name=".formulario_constancia"
+            android:name=".formularios.formulario_constancia"
             android:exported="false" />
         <activity
-            android:name=".formulario_credencial"
+            android:name=".formularios.formulario_credencial"
             android:exported="false" />
         <activity
-            android:name=".Activity_Egresado"
+            android:name=".alumnos.Activity_Egresado"
             android:exported="false" />
         <activity
-            android:name=".Activity_Aspirantes"
+            android:name=".aspirantes.Activity_Aspirantes"
             android:exported="false" />
         <activity
-            android:name=".Activity_Registro"
+            android:name=".alumnos.Activity_Registro"
             android:exported="false" />
         <activity
-            android:name=".Activity_Inicio"
+            android:name=".alumnos.Activity_Inicio"
             android:exported="false" />
         <activity
-            android:name=".Activity_Login"
+            android:name=".alumnos.Activity_Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".alumnos.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

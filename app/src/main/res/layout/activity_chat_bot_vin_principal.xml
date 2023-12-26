@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatBot_VinPrincipal">
+    tools:context=".chatBotVIN.ChatBot_VinPrincipal">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewVIN"

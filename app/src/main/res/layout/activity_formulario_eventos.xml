@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/verde_1"
     android:layout_height="match_parent"
-    tools:context=".formulario_eventos">
+    tools:context=".formularios.formulario_eventos">
 
     <ScrollView
         android:layout_width="match_parent"

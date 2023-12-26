@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verde_1"
-    tools:context=".FragmentCE_Config">
+    tools:context=".adminCE.FragmentCE_Config">
 
     <ScrollView
         android:layout_width="match_parent"

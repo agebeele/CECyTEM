@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verde_1"
-    tools:context=".Activity_Inicio">
+    tools:context=".alumnos.Activity_Inicio">
 
     <!-- CardView como fondo ajustado a la pantalla -->
     <androidx.cardview.widget.CardView

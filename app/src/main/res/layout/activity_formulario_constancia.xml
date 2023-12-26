@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verde_1"
-    tools:context=".formulario_constancia">
+    tools:context=".formularios.formulario_constancia">
 
     <!-- CardView como fondo ajustado a la pantalla -->
     <androidx.cardview.widget.CardView

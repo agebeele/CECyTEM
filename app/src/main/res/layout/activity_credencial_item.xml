@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verde_1"
-    tools:context=".credencial_item">
+    tools:context=".solicitudCredencial.credencial_item">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

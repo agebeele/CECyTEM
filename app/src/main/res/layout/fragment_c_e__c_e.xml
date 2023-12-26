@@ -9,7 +9,7 @@
     android:paddingRight="10dp"
     android:paddingBottom="10dp"
     android:background="@color/verde_1"
-    tools:context=".FragmentCE_CE">
+    tools:context=".adminCE.FragmentCE_CE">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
