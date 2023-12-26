@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:onClick="agregarPublicacion"
+                android:onClick="crearPublicacion"
                 android:text="agregar publicación" />
         </LinearLayout>
 

@@ -72,24 +72,6 @@ public class FragmentCE_Inicio extends Fragment {
         Intent publicaion = new Intent(getActivity(),agregarItem_CE.class);
         startActivity(publicaion);
     }
-
-    /*
-    private List<item_ce> generatePublicacionItems() {
-
-        List<item_ce> item_ces = new ArrayList<>();
-        item_ces.add(new item_ce(R.drawable.cecytem,"Consejo tecnico","El dia de mañana se llevara a cabo", "08/11/2023", "10:12"));
-        item_ces.add(new item_ce(R.drawable.cecytem,"Junta de Padres","Firma de boletas", "14/12/2023", "03:12"));
-        item_ces.add(new item_ce(R.drawable.cecytem,"No hay clases","Por el cumpleaños de Brandon", "10/11/2023", "08:30"));
-        item_ces.add(new item_ce(R.drawable.cecytem,"Consejo tecnico","El dia de mañana se llevara a cabo", "08/11/2023", "10:12"));
-        item_ces.add(new item_ce(R.drawable.cecytem,"Junta de Padres","Firma de boletas", "14/12/2023", "03:12"));
-        item_ces.add(new item_ce(R.drawable.cecytem,"No hay clases","Por el cumpleaños de Brandon", "10/11/2023", "08:30"));
-        item_ces.add(new item_ce(R.drawable.cecytem,"Consejo tecnico","El dia de mañana se llevara a cabo", "08/11/2023", "10:12"));
-        item_ces.add(new item_ce(R.drawable.cecytem,"Junta de Padres","Firma de boletas", "14/12/2023", "03:12"));
-        item_ces.add(new item_ce(R.drawable.cecytem,"No hay clases","Por el cumpleaños de Brandon", "10/11/2023", "08:30"));
-
-        return item_ces;
-    }
-    */
     class MiAsyncTask extends AsyncTask<Void, String, Void> {
         @Override
         protected Void doInBackground(Void... parameters) {
