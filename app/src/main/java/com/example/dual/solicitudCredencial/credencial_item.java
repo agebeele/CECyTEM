@@ -9,14 +9,13 @@ import com.example.dual.R;
 
 public class credencial_item extends AppCompatActivity {
 
-    TextView tramite, hora, fecha, matricula, nombre, paterno, materno, grupo, observaciones;
+    TextView hora, fecha, matricula, nombre, paterno, materno, grupo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credencial_item);
 
-        tramite = (TextView) findViewById(R.id.item_tipoTramite);
         hora = (TextView) findViewById(R.id.item_hora);
         fecha = (TextView) findViewById(R.id.item_fecha);
         matricula = (TextView) findViewById(R.id.item_matricula);
@@ -24,11 +23,9 @@ public class credencial_item extends AppCompatActivity {
         paterno = (TextView) findViewById(R.id.item_apellidoPaterno);
         materno = (TextView) findViewById(R.id.item_apellidoMaterno);
         grupo = (TextView) findViewById(R.id.item_grupo);
-        observaciones = (TextView) findViewById(R.id.item_observaciones);
 
         Bundle recibirInformacion = getIntent().getExtras();
         if (recibirInformacion !=null){
-            String info_tramite = recibirInformacion.getString("tipoTramite");
             String info_hora = recibirInformacion.getString("hora");
             String info_fecha = recibirInformacion.getString("fecha");
             String info_matricula = recibirInformacion.getString("matricula");
@@ -36,9 +33,7 @@ public class credencial_item extends AppCompatActivity {
             String info_paterno = recibirInformacion.getString("apellido_paterno");
             String info_materno = recibirInformacion.getString("apellido_materno");
             String info_grupo = recibirInformacion.getString("grupo");
-            String info_observaciones = recibirInformacion.getString("observaciones");
 
-            tramite.setText(info_tramite);
             hora.setText(info_hora);
             fecha.setText(info_fecha);
             matricula.setText(info_matricula);
@@ -46,7 +41,6 @@ public class credencial_item extends AppCompatActivity {
             paterno.setText(info_paterno);
             materno.setText(info_materno);
             grupo.setText(info_grupo);
-            observaciones.setText(info_observaciones);
         }
     }
 }

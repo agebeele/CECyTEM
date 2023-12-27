@@ -23,7 +23,7 @@
             android:id="@+id/tramiteAlumno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="tramite"
+            android:text="Tramite: Credencial"
             android:textColor="@color/black"
             android:layout_toStartOf="@id/checkBoxTramiteRealizado"
             android:textSize="20sp" />

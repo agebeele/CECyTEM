@@ -31,10 +31,8 @@ public class credencial_recycler extends AppCompatActivity {
     private List<String> paternoList = new ArrayList<>();
     private List<String> maternoList = new ArrayList<>();
     private List<String> matriculaList = new ArrayList<>();
-    private List<String> tramiteList = new ArrayList<>();
     private List<String> fechaList = new ArrayList<>();
     private List<String> horaList = new ArrayList<>();
-    private List<String> observacionesList = new ArrayList<>();
     private List<String> grupoList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +46,7 @@ public class credencial_recycler extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(credencial_recycler.this));
 
-        credencial_adapter = new credencial_adapter(nombreList, paternoList, maternoList, matriculaList, tramiteList);
+        credencial_adapter = new credencial_adapter(nombreList, paternoList, maternoList, matriculaList);
 
         recyclerView.setAdapter(credencial_adapter);
 
@@ -59,14 +57,13 @@ public class credencial_recycler extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 Intent i = new Intent(getApplicationContext(), credencial_item.class);
-                i.putExtra("tipoTramite", tramiteList.get(position));
                 i.putExtra("fecha", fechaList.get(position));
                 i.putExtra("hora", horaList.get(position));
                 i.putExtra("nombre", nombreList.get(position));
                 i.putExtra("apellido_paterno", paternoList.get(position));
                 i.putExtra("apellido_materno", maternoList.get(position));
                 i.putExtra("grupo", grupoList.get(position));
-                i.putExtra("observaciones", observacionesList.get(position));
+
                 startActivity(i);
             }
         });
@@ -92,23 +89,19 @@ public class credencial_recycler extends AppCompatActivity {
                     String paterno = "Apellido Paterno: " + json_data.getString("apellido_paterno");
                     String materno = "Apellido Materno: " + json_data.getString("apellido_materno");
                     String matricula = "Matricula: " + json_data.getString("matricula");
-                    String tramite = "Tramite: " + json_data.getString("tipoTramite");
 
                     String fecha = "Fecha: " + json_data.getString("fecha");
                     String hora = "Hora: " + json_data.getString("hora");
                     String grupo = "Grupo: " + json_data.getString("grupo");
-                    String observaciones = "Observaciones: " + json_data.getString("observaciones");
 
                     nombreList.add(nombre);
                     paternoList.add(paterno);
                     maternoList.add(materno);
                     matriculaList.add(matricula);
-                    tramiteList.add(tramite);
 
                     fechaList.add(fecha);
                     horaList.add(hora);
                     grupoList.add(grupo);
-                    observacionesList.add(observaciones);
                 }
             } catch (JSONException e) {
                 Toast.makeText(credencial_recycler.this, progress[0], Toast.LENGTH_LONG).show();
