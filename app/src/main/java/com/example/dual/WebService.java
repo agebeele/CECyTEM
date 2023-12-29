@@ -430,6 +430,62 @@ public class WebService {
         }
         return aux;
     }
+    public String solicitudesConstancia() {
+        String aux = "";
+        try {
+            URL url = new URL("http://192.168.100.16:80/conexion_cecytem/solicitudes_constancia.php");
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+
+            // No enviamos la matrícula en este caso
+
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                String linea = reader.readLine();
+                while (linea != null) {
+                    aux = aux + linea; // Concatenar datos línea por línea
+                    linea = reader.readLine(); // Leer siguiente línea
+                }
+                reader.close(); // Cerrar buffer de lectura
+                // Resto del código para manejar la respuesta del servidor...
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
+    public String solicitudesHistorial() {
+        String aux = "";
+        try {
+            URL url = new URL("http://192.168.100.16:80/conexion_cecytem/solicitudes_historial.php");
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+
+            // No enviamos la matrícula en este caso
+
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                String linea = reader.readLine();
+                while (linea != null) {
+                    aux = aux + linea; // Concatenar datos línea por línea
+                    linea = reader.readLine(); // Leer siguiente línea
+                }
+                reader.close(); // Cerrar buffer de lectura
+                // Resto del código para manejar la respuesta del servidor...
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
     public String crearPublicacion (String titulo, String descripcion, String fecha, String hora) {
         String response = "";
         try {

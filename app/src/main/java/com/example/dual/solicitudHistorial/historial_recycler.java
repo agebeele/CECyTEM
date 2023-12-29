@@ -1,4 +1,4 @@
-package com.example.dual.solicitudCredencial;
+package com.example.dual.solicitudHistorial;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,9 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dual.alumnos.DividerItemDecoration;
 import com.example.dual.R;
 import com.example.dual.WebService;
+import com.example.dual.alumnos.DividerItemDecoration;
+import com.example.dual.solicitudConstancia.constancia_adapter;
+import com.example.dual.solicitudCredencial.credencial_item;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,12 +23,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class credencial_recycler extends AppCompatActivity {
-
+public class historial_recycler extends AppCompatActivity {
     String msj;
     WebService obj = new WebService();
     RecyclerView recyclerView;
-    credencial_adapter credencial_adapter;
+    historial_adapter historialAdapter;
     private List<String> nombreList = new ArrayList<>();
     private List<String> paternoList = new ArrayList<>();
     private List<String> maternoList = new ArrayList<>();
@@ -34,36 +35,38 @@ public class credencial_recycler extends AppCompatActivity {
     private List<String> fechaList = new ArrayList<>();
     private List<String> horaList = new ArrayList<>();
     private List<String> grupoList = new ArrayList<>();
+    private List<String> observacionesList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_credencial);
-
+        setContentView(R.layout.activity_historial_recycler);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewHistorial);
 
-        DividerItemDecoration itemDecoration = new DividerItemDecoration(credencial_recycler.this, R.drawable.divider_line);
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(historial_recycler.this, R.drawable.divider_line);
         recyclerView.addItemDecoration(itemDecoration);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(credencial_recycler.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(historial_recycler.this));
 
-        credencial_adapter = new credencial_adapter(nombreList, paternoList, maternoList, matriculaList);
+        historialAdapter = new historial_adapter(nombreList, paternoList, maternoList, matriculaList);
 
-        recyclerView.setAdapter(credencial_adapter);
+        recyclerView.setAdapter(historialAdapter);
 
         MiAsyncTask miAsyncTask = new MiAsyncTask();
         miAsyncTask.execute();
 
-        credencial_adapter.setOnItemClickListener(new credencial_adapter.OnItemClickListener() {
+        historialAdapter.setOnItemClickListener(new constancia_adapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Intent i = new Intent(getApplicationContext(), credencial_item.class);
                 i.putExtra("fecha", fechaList.get(position));
                 i.putExtra("hora", horaList.get(position));
                 i.putExtra("nombre", nombreList.get(position));
-                i.putExtra("matricula", matriculaList.get(position));
                 i.putExtra("apellido_paterno", paternoList.get(position));
                 i.putExtra("apellido_materno", maternoList.get(position));
                 i.putExtra("grupo", grupoList.get(position));
+                i.putExtra("matricula", matriculaList.get(position));
+                i.putExtra("observaciones", observacionesList.get(position));
 
                 startActivity(i);
             }
@@ -72,7 +75,7 @@ public class credencial_recycler extends AppCompatActivity {
     class MiAsyncTask extends AsyncTask<Void, String, Void> {
         @Override
         protected Void doInBackground(Void... parameters) {
-            msj = obj.solicitudesCredencial();
+            msj = obj.solicitudesHistorial();
             publishProgress(msj);
             return null;
         }
@@ -95,6 +98,8 @@ public class credencial_recycler extends AppCompatActivity {
                     String hora = "Hora: " + json_data.getString("hora");
                     String grupo = "Grupo: " + json_data.getString("grupo");
 
+                    String observaciones = "observaciones: " + json_data.getString("observaciones");
+
                     nombreList.add(nombre);
                     paternoList.add(paterno);
                     maternoList.add(materno);
@@ -103,11 +108,13 @@ public class credencial_recycler extends AppCompatActivity {
                     fechaList.add(fecha);
                     horaList.add(hora);
                     grupoList.add(grupo);
+
+                    observacionesList.add(observaciones);
                 }
             } catch (JSONException e) {
-                Toast.makeText(credencial_recycler.this, progress[0], Toast.LENGTH_LONG).show();
+                Toast.makeText(historial_recycler.this, progress[0], Toast.LENGTH_LONG).show();
             }
-            credencial_adapter.notifyDataSetChanged();
+            historialAdapter.notifyDataSetChanged();
         }
     }
 }

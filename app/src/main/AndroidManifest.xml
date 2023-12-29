@@ -24,6 +24,24 @@
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".solicitudHistorial.historial_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudHistorial.historial_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudHistorial.historial_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudConstancia.constancia_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudConstancia.constancia_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudConstancia.constancia_recycler"
+            android:exported="false" />
+        <activity
             android:name=".adminVIN.adminVIN_perfil"
             android:exported="false" />
         <activity
