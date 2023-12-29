@@ -58,13 +58,13 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/ingresa_numeroControl"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Matricula"
-                    android:inputType="text" />
+            <EditText
+                android:id="@+id/matricula_historial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Matricula"
+                android:inputType="number" />
 
                 <TextView
                     android:id="@+id/textView24"
@@ -76,7 +76,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/txtpromedio"
+                    android:id="@+id/grupo_historial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -93,7 +93,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/txtTelefonoCasa"
+                    android:id="@+id/paterno_historial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -110,7 +110,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/txtTelefonoCelular"
+                    android:id="@+id/materno_historial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -127,36 +127,36 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/txtgrupo"
+                    android:id="@+id/nombre_historial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Nombre"
                     android:inputType="text" />
 
-                <TextView
-                    android:id="@+id/textView28"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Fecha:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Observaciones:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/txtCorreo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Fecha"
-                    android:inputType="date" />
+            <EditText
+                android:id="@+id/observaciones_historial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Observaciones"
+                android:inputType="text" />
 
-                <Button
-                    android:id="@+id/button9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="enviarDatosCredencial"
-                    android:text="Enviar" />
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviarDatosHistorial"
+                android:text="Enviar" />
 
                 <TextView
                     android:id="@+id/textView29"

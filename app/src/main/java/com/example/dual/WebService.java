@@ -517,7 +517,7 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarConstancia (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String observaciones) {
+    public String solicitarConstancia(String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String observaciones) {
         String response = "";
         try {
             URL url = new URL("http://192.168.100.16:80/conexion_cecytem/solicitar_constancia.php");
@@ -525,15 +525,15 @@ public class WebService {
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
 
-            // Construye los datos a enviar en el cuerpo de la solicitud
             String data = "matricula=" + URLEncoder.encode(matricula, "UTF-8")
                     + "&grupo=" + URLEncoder.encode(grupo, "UTF-8")
-                    + "&fecha=" + URLEncoder.encode(fecha, "UTF-8")
-                    + "&hora=" + URLEncoder.encode(hora, "UTF-8")
                     + "&nombre=" + URLEncoder.encode(nombre, "UTF-8")
                     + "&apellido_paterno=" + URLEncoder.encode(paterno, "UTF-8")
-                    + "&observaciones=" + URLEncoder.encode(observaciones, "UTF-8")
-                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8");
+                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8")
+                    + "&fecha=" + URLEncoder.encode(fecha, "UTF-8")
+                    + "&hora=" + URLEncoder.encode(hora, "UTF-8")
+                    + "&observaciones=" + URLEncoder.encode(observaciones, "UTF-8");
+
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
@@ -563,7 +563,7 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarHistorial (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora) {
+    public String solicitarHistorial (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String observaciones) {
         String response = "";
         try {
             URL url = new URL("http://192.168.100.16:80/conexion_cecytem/solicitar_historial.php");
@@ -578,6 +578,7 @@ public class WebService {
                     + "&hora=" + URLEncoder.encode(hora, "UTF-8")
                     + "&nombre=" + URLEncoder.encode(nombre, "UTF-8")
                     + "&apellido_paterno=" + URLEncoder.encode(paterno, "UTF-8")
+                    + "&observaciones=" + URLEncoder.encode(observaciones, "UTF-8")
                     + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8");
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());

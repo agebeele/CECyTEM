@@ -61,6 +61,8 @@ public class formulario_credencial extends AppCompatActivity {
                     apellidoMaterno.getText().toString(),
                     fechaActual,
                     horaActual);
+
+            Toast.makeText(formulario_credencial.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -86,10 +88,11 @@ public class formulario_credencial extends AppCompatActivity {
                 JSONObject json_data = null;
                 for (int i = 0; i < jArray.length(); i++) {
                     numeroControl.setText(json_data.getString("matricula"));
-                    grupo.setText(json_data.getString("curp"));
+                    grupo.setText(json_data.getString("grupo"));
                     nombre.setText(json_data.getString("nombre"));
                     apellidoPaterno.setText(json_data.getString("apellido_paterno"));
                     apellidoMaterno.setText(json_data.getString("apellido_materno"));
+
                     Toast.makeText(formulario_credencial.this, "Usuario registrado.", Toast.LENGTH_SHORT).show();
                 }
             } catch (JSONException e) {

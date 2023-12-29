@@ -32,14 +32,14 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView32"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Formulario pra Constancia"
-                    android:textColor="@color/verde_1"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Formulario para Constancia"
+                android:textColor="@color/verde_1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView33"
@@ -53,7 +53,7 @@
 
 
                 <EditText
-                    android:id="@+id/ingresa_numeroControl1"
+                    android:id="@+id/matricula_constancia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -70,7 +70,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/ingresa_grupo1"
+                    android:id="@+id/grupo_constancia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -87,7 +87,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/ingresa_paterno1"
+                    android:id="@+id/paterno_constancia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -104,7 +104,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/ingresa_materno1"
+                    android:id="@+id/materno_constancia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -121,31 +121,14 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/ingresa_nombre1"
+                    android:id="@+id/nombre_constancia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Nombre"
                     android:inputType="text" />
 
-                <TextView
-                    android:id="@+id/textView38"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Fecha:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/ingresa_fecha1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Fecha"
-                    android:inputType="date" />
-
-                <TextView
+            <TextView
                     android:id="@+id/textView39"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -155,19 +138,19 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/ingresa_observaciones1"
+                    android:id="@+id/observaciones_constancia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Foto, sello, firma, historial, etc."
                     android:inputType="text" />
 
-                <Button
-                    android:id="@+id/button10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="enviarDatosConstancia"
-                    android:text="Enviar" />
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviarDatosConstancia"
+                android:text="Enviar" />
 
                 <TextView
                     android:id="@+id/textView40"
