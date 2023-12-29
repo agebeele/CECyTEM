@@ -86,14 +86,14 @@ public class credencial_recycler extends AppCompatActivity {
                 for (int i = 0; i < length; i++) {
                     json_data = jsonArray.getJSONObject(i);
 
-                    String nombre = "Nombre: " + json_data.getString("nombre");
-                    String paterno = "Apellido Paterno: " + json_data.getString("apellido_paterno");
-                    String materno = "Apellido Materno: " + json_data.getString("apellido_materno");
-                    String matricula = "Matricula: " + json_data.getString("matricula");
+                    String nombre =  json_data.getString("nombre");
+                    String paterno =  json_data.getString("apellido_paterno");
+                    String materno =  json_data.getString("apellido_materno");
+                    String matricula =  json_data.getString("matricula");
 
-                    String fecha = "Fecha: " + json_data.getString("fecha");
-                    String hora = "Hora: " + json_data.getString("hora");
-                    String grupo = "Grupo: " + json_data.getString("grupo");
+                    String fecha = json_data.getString("fecha");
+                    String hora = json_data.getString("hora");
+                    String grupo =  json_data.getString("grupo");
 
                     nombreList.add(nombre);
                     paternoList.add(paterno);

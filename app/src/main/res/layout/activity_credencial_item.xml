@@ -10,13 +10,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="603dp"
         android:layout_margin="10dp"
+        android:layout_marginBottom="603dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,6 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_gravity="center"
                     android:orientation="vertical">
 
                     <TextView
@@ -47,43 +48,29 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Colegio de Estudios Cinetificos y Tecologicos del Estado de México"
+                        android:text="Colegio de Estudios Cientificos y Tecologicos del Estado de México"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/item_tipoTramite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_marginTop="10dp"
                         android:text="Tramite: Credencial"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:id="@+id/item_fecha"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Fecha: 00/00/00"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/item_hora"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Hora: 00:00:00"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
@@ -91,20 +78,71 @@
                     android:id="@+id/textView65"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="30sp"
-                    android:textColor="@color/verde_1"
+                    android:text="Datos de la solicitud"
                     android:textAlignment="center"
-                    android:text="Datos de la solicitud" />
+                    android:textColor="@color/verde_1"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:text="Fecha de la solicitud:" />
+
+                <TextView
+                    android:id="@+id/item_fecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha: 00/00/00"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textHora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:text="Hora:" />
+
+                <TextView
+                    android:id="@+id/item_hora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hora: 00:00:00"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textMatricula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:text="Matricula:" />
 
                 <TextView
                     android:id="@+id/item_matricula"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:text="Matricula: 123456789"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:text="Nombre:" />
 
                 <TextView
                     android:id="@+id/item_nombre"
@@ -115,6 +153,15 @@
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/textPaterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:text="Apellido paterno:" />
+
+                <TextView
                     android:id="@+id/item_apellidoPaterno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -123,12 +170,30 @@
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/textMaterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:text="Apellido materno:" />
+
+                <TextView
                     android:id="@+id/item_apellidoMaterno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Apellido Materno: Garcia"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textGrupo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:text="Grupo:" />
 
                 <TextView
                     android:id="@+id/item_grupo"

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dual.R;
 import com.example.dual.WebService;
 import com.example.dual.alumnos.DividerItemDecoration;
-import com.example.dual.solicitudCredencial.credencial_item;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,7 +59,7 @@ public class constancia_recycler extends AppCompatActivity {
         constanciaAdapter.setOnItemClickListener(new constancia_adapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Intent i = new Intent(getApplicationContext(), credencial_item.class);
+                Intent i = new Intent(getApplicationContext(), constancia_item.class);
                 i.putExtra("fecha", fechaList.get(position));
                 i.putExtra("hora", horaList.get(position));
                 i.putExtra("nombre", nombreList.get(position));
@@ -91,14 +90,14 @@ public class constancia_recycler extends AppCompatActivity {
                 for (int i = 0; i < length; i++) {
                     json_data = jsonArray.getJSONObject(i);
 
-                    String nombre = "Nombre: " + json_data.getString("nombre");
-                    String paterno = "Apellido Paterno: " + json_data.getString("apellido_paterno");
-                    String materno = "Apellido Materno: " + json_data.getString("apellido_materno");
-                    String matricula = "Matricula: " + json_data.getString("matricula");
-                    String fecha = "Fecha: " + json_data.getString("fecha");
-                    String hora = "Hora: " + json_data.getString("hora");
-                    String grupo = "Grupo: " + json_data.getString("grupo");
-                    String observaciones = "Observaciones: " + json_data.getString("observaciones");
+                    String nombre = json_data.getString("nombre");
+                    String paterno = json_data.getString("apellido_paterno");
+                    String materno =  json_data.getString("apellido_materno");
+                    String matricula =  json_data.getString("matricula");
+                    String fecha = json_data.getString("fecha");
+                    String hora = json_data.getString("hora");
+                    String grupo = json_data.getString("grupo");
+                    String observaciones =  json_data.getString("observaciones");
 
                     Log.d("WebService", "Observaciones: " + observaciones);
 
