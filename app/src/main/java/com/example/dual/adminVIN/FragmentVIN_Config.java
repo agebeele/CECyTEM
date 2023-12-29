@@ -42,7 +42,20 @@ public class FragmentVIN_Config extends Fragment {
             }
         });
 
+        myPerfil = (Button) v.findViewById(R.id.perfilBoton);
+        myPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cambioPerfil();
+            }
+        });
+
         return v;
+    }
+
+    private void cambioPerfil() {
+        Intent pantallaPerfil = new Intent(getActivity(), adminVIN_perfil.class);
+        startActivity(pantallaPerfil);
     }
 
     private void cambioNosotros() {

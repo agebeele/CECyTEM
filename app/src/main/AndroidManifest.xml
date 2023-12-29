@@ -24,6 +24,9 @@
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".adminVIN.adminVIN_perfil"
+            android:exported="false" />
+        <activity
             android:name=".solicitudCredencial.credencial_item"
             android:exported="false" />
         <activity

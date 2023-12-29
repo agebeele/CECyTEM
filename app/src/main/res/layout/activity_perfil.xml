@@ -55,7 +55,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/nombreUsuario"
+                            android:id="@+id/nombre_user"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
@@ -64,7 +64,7 @@
                             android:textSize="20sp" />
 
                         <TextView
-                            android:id="@+id/matriculaUsuario"
+                            android:id="@+id/matricula_user"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
@@ -131,7 +131,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/infoPaterno"
+                            android:id="@+id/infoPaterno_user"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -156,7 +156,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/infoMaterno"
+                            android:id="@+id/infoMaterno_user"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -181,7 +181,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/infoNombre"
+                            android:id="@+id/infoNombre_user"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

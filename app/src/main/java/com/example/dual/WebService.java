@@ -205,6 +205,49 @@ public class WebService {
         }
         return aux;
     }
+    public String login_adminVIN(String matricula, String curp) {
+        String aux = "";
+        try {
+            URL url = new URL("http://192.168.100.16:80/conexion_cecytem/login_adminVin.php");
+
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+            OutputStreamWriter data1 = new OutputStreamWriter(conexion.getOutputStream());
+
+            String data = "matricula=" + URLEncoder.encode(matricula, "UTF-8")
+                    +  "&curp=" + URLEncoder.encode(curp, "UTF-8");
+
+            data1.write(data);
+            data1.flush();
+            data1.close();
+
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                String linea = reader.readLine();
+                while (linea != null) {
+                    aux = aux + linea; // Concatenar datos línea por línea
+                    linea = reader.readLine(); // Leer siguiente línea
+                }
+                reader.close(); // Cerrar buffer de lectura
+                if (aux.equals("2002")) {
+                    aux = "ERROR DE CONEXION AL SERVIDOR DE DATOS";
+                } else if (aux.equals("001")) {
+                    aux = "Correo sin validar";
+                } else if (aux.equals("000")) {
+                    aux = "No se pudo mostrar la contraseña";
+                } else if (aux.equals("010")) {
+                    aux = "El Usuario o Contraseña no existe";
+                }
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
     public String agregarEvento(String titulo, String descripcion, String fecha) {
         String aux = "";
         try {
@@ -299,10 +342,40 @@ public class WebService {
         }
         return aux;
     }
-    public String datosAdmin_CE(String matricula) {
+    public String datosAdminCE(String matricula) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.16:80/conexion_cecytem/datosadmin_CE.php");
+            URL url = new URL("http://192.168.100.16:80/conexion_cecytem/datos_adminCE.php");
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+            OutputStreamWriter writer = new OutputStreamWriter(conexion.getOutputStream());
+            String data = "matricula=" + URLEncoder.encode(matricula, "UTF-8"); // Pasar el correo electrónico del usuario
+            writer.write(data);
+            writer.flush();
+            writer.close();
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                String linea = reader.readLine();
+                if (!linea.equals("010")) { // Verificar si no es un error de "No se encontraron resultados"
+                    aux = linea; // Recuperar el JSON con los datos del usuario
+                } else {
+                    aux = "No se encontraron resultados"; // Manejar el caso de usuario no encontrado
+                }
+                reader.close(); // Cerrar buffer de lectura
+            } else {
+                aux = "ERROR al procesar servicio: " + conexion.getResponseCode();
+            }
+            conexion.disconnect();
+        } catch (Exception ex) {
+            aux = "ERROR de SERVIDOR: " + ex.getMessage();
+        }
+        return aux;
+    }
+    public String datosAdminVIN(String matricula) {
+        String aux = "";
+        try {
+            URL url = new URL("http://192.168.100.16:80/conexion_cecytem/datos_adrminVIN.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);

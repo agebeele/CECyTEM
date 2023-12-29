@@ -27,11 +27,11 @@ public class Activity_Perfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        nombreGeneral = findViewById(R.id.nombreUsuario);
-        matriculaGeneral = findViewById(R.id.matriculaUsuario);
-        nombre = findViewById(R.id.infoNombre);
-        apellido_paterno = findViewById(R.id.infoPaterno);
-        apellido_materno = findViewById(R.id.infoMaterno);
+        nombreGeneral = findViewById(R.id.nombre_user);
+        matriculaGeneral = findViewById(R.id.matricula_user);
+        nombre = findViewById(R.id.infoNombre_user);
+        apellido_paterno = findViewById(R.id.infoPaterno_user);
+        apellido_materno = findViewById(R.id.infoMaterno_user);
 
         municipio = findViewById(R.id.txt_municipio);
         colonia = findViewById(R.id.txt_colonia);

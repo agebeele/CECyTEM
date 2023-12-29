@@ -1,4 +1,4 @@
-package com.example.dual.adminCE;
+package com.example.dual.adminVIN;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,8 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class adminCE_Perfil extends AppCompatActivity {
-
+public class adminVIN_perfil extends AppCompatActivity {
     TextView nombreGeneral, matriculaGeneral;
     TextView nombre, apellido_paterno, apellido_materno;
     WebService obj = new WebService();
@@ -25,13 +24,13 @@ public class adminCE_Perfil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_ce_perfil);
+        setContentView(R.layout.activity_admin_vin_perfil);
 
-        nombreGeneral = findViewById(R.id.nombre_ce);
-        matriculaGeneral = findViewById(R.id.matricula_ce);
-        nombre = findViewById(R.id.infoNombre_ce);
-        apellido_paterno = findViewById(R.id.infoPaterno_ce);
-        apellido_materno = findViewById(R.id.infoMaterno_ce);
+        nombreGeneral = findViewById(R.id.nombre_vin);
+        matriculaGeneral = findViewById(R.id.matriculaVIN);
+        nombre = findViewById(R.id.infoNombre_vin);
+        apellido_paterno = findViewById(R.id.infoPaterno_vin);
+        apellido_materno = findViewById(R.id.infoMaterno_vin);
 
         // Recuperar la matrícula guardada en SharedPreferences
         SharedPreferences preferences = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
@@ -42,12 +41,11 @@ public class adminCE_Perfil extends AppCompatActivity {
             datosUserTask.execute(matricula);
         }
     }
-
     class MiAsyncTask extends AsyncTask<String, String, String> {
 
         @Override
         protected String doInBackground(String... parameter) {
-            return obj.datosAdminCE(parameter[0]);
+            return obj.datosAdminVIN(parameter[0]);
         }
 
         @Override
