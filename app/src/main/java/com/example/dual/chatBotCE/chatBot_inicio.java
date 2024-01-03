@@ -79,7 +79,6 @@ public class chatBot_inicio extends AppCompatActivity {
                 return "El costo para una reposición de credencial es el siguiente:" +
                         "\n Credencial para alumno de 1er y 2do Semestre: $10" +
                         "\n Credencial para alumno de 3er, 4to, 5to y 6to Semestre es de: $64";
-            // Agrega más casos según sea necesario
             case 3:
                 return "Para solicitar una Constancia de estudios puedes hacerlo llenando el formulario dentro de la aplicación o bien desde ventanilla en el departamento de Control Escolar, solo con los siguientes datos:" +
                         "\n Nombre Completo" +
@@ -93,13 +92,25 @@ public class chatBot_inicio extends AppCompatActivity {
             case 4:
                 return "alta seguro";
             case 5:
-                return "cambio turno";
+                return "Para solicitur un cambio turno primero debes de descargar el PDF que se encuentra seleccionando (Cambio de turno)" +
+                        "en la lista desplegable y das click en tramitar, hecho esto ahi se encontra el PDF de para solicitar un cambio de turno." +
+                        "\n Una vez descargado los llenaras con los datos necesarios y terminado eso, deberas entregar tu documento en fisico en el" +
+                        "departamento de Control Escolar.";
             case 6:
-                return "cambio grupo";
+                return "Para solicitur un cambio grupo primero debes de descargar el PDF que se encuentra seleccionando (Cambio de grupo)" +
+                        "en la lista desplegable y das click en tramitar, hecho esto ahi se encontra el PDF de para solicitar un cambio de grupo." +
+                        "\n Una vez descargado los llenaras con los datos necesarios y terminado eso, deberas entregar tu documento en fisico en el" +
+                        "departamento de Control Escolar.";
             case 7:
-                return "cambio carrera";
+                return "Para solicitur un cambio carrera primero debes de descargar el PDF que se encuentra seleccionando (Cambio de carrera)" +
+                        "en la lista desplegable y das click en tramitar, hecho esto ahi se encontra el PDF de para solicitar un cambio de carrera." +
+                        "\n Una vez descargado los llenaras con los datos necesarios y terminado eso, deberas entregar tu documento en fisico en el" +
+                        "departamento de Control Escolar.";
             case 8:
-                return "cambio plantel";
+                return "Para solicitur un cambio plantel primero debes de descargar el PDF que se encuentra seleccionando (Cambio de plantel)" +
+                        "en la lista desplegable y das click en tramitar, hecho esto ahi se encontra el PDF de para solicitar un cambio de plantel." +
+                        "\n Una vez descargado los llenaras con los datos necesarios y terminado eso, deberas entregar tu documento en fisico en el" +
+                        "departamento de Control Escolar.";
             case 9:
                 return "recurse";
             case 10:

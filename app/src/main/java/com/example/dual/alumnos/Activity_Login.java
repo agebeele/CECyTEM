@@ -16,11 +16,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.dual.aspirantes.Activity_Aspirantes;
-import com.example.dual.adminCE.AdminCE_Login;
-import com.example.dual.adminVIN.AdminVin_Login;
 import com.example.dual.R;
 import com.example.dual.WebService;
+import com.example.dual.adminCE.AdminCE_Login;
+import com.example.dual.adminVIN.AdminVin_Login;
+import com.example.dual.aspirantes.Activity_Aspirantes;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -61,26 +61,7 @@ public class Activity_Login extends AppCompatActivity {
         sitioOfical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //URL
-                try {
-                    // URL de la página que quieres abrir
-                    String url = "https://cecytem.mx/deo/gui/LogIn.jsp";
-
-                    // Crea un Intent con la acción ACTION_VIEW y la URL como datos de URI
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-
-                    // Verifica si hay una aplicación para manejar la acción VIEW
-                    if (intent.resolveActivity(getPackageManager()) != null) {
-                        // Inicia la actividad si hay una aplicación disponible
-                        startActivity(intent);
-                    } else {
-                        // Puedes manejar el caso en el que no haya aplicaciones disponibles para abrir la página
-                        Toast.makeText(Activity_Login.this, "No hay aplicaciones disponibles para abrir la página", Toast.LENGTH_SHORT).show();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(Activity_Login.this, "Error al abrir la página", Toast.LENGTH_SHORT).show();
-                }
+                abrirPaginaWeb();
             }
         });
 
@@ -91,6 +72,12 @@ public class Activity_Login extends AppCompatActivity {
                 showAdminSelectionDialog();
             }
         });
+    }
+
+    private void abrirPaginaWeb() {
+        String url = "https://cecytem.mx/deo/gui/LogIn.jsp";
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
 
     private void showAdminSelectionDialog() {

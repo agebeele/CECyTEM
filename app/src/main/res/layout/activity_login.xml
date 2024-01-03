@@ -92,7 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:onClick="login"
                     android:text="Iniciar Sesión" />
@@ -130,7 +130,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="20dp"
+                    android:layout_margin="10dp"
                     android:orientation="horizontal">
 
                     <Button
@@ -159,7 +159,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="70dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#DDDDDD"
                     app:cardCornerRadius="20dp">
@@ -179,18 +179,10 @@
                             android:textColor="@color/black" />
 
                         <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="Soporte Técnico: (722) 275-80-40 Ext. 2103, 2101, 1115 y 1117"
-                            android:textAlignment="center"
-                            android:textColor="@color/black" />
-
-                        <TextView
                             android:id="@+id/paginaOficial"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:text="Pagina oficial del CECyTEM"
                             android:textAlignment="center"
                             android:textColor="#0000CC" />

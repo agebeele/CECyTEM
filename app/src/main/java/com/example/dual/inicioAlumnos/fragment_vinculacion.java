@@ -100,7 +100,7 @@ public class fragment_vinculacion extends Fragment {
 
         Calendar fechaFinVacaciones = Calendar.getInstance();
         fechaFinVacaciones.set(Calendar.YEAR, 2023); // Cambia el año según tu necesidad
-        fechaFinVacaciones.set(Calendar.MONTH, Calendar.AUGUST); // Cambia el mes según tu necesidad
+        fechaFinVacaciones.set(Calendar.MONTH, Calendar.DECEMBER); // Cambia el mes según tu necesidad
         fechaFinVacaciones.set(Calendar.DAY_OF_MONTH, 31); // Cambia el día según tu necesidad
 
 // Obtén el array de opciones desde los recursos
@@ -134,20 +134,10 @@ public class fragment_vinculacion extends Fragment {
 
                     switch (selectedItem){
                         case "Tramite de Becas":
-                            textView.setText("Para reponer una credencial son necesarios los siguientes datos:" +
-                                    "\n - Nombre completo" +
-                                    "\n - Grupo" +
-                                    "\n - Matricula" +
-                                    "\n - Turno"+
-                                    "\n Y ademas de otros datos que se solicitaran en el formulario.");
+                            textView.setText("Tramite becas");
                             break;
                         case "Registro de Eventos":
-                            textView.setText("Para solicitar una constancia son necesarios los siguientes datos:" +
-                                    "\n - Nombre completo" +
-                                    "\n - Grupo" +
-                                    "\n - Matricula" +
-                                    "\n - Carrera" +
-                                    "\n Y ademas de otros datos que se solicitaran en el formulario.");
+                            textView.setText("Registro eventos");
                             break;
                         case "Tramite de Servicio Social":
                             textView.setText("Para realizar tu tramite de Servicio Social son necesarios los siguientes datos:" +
