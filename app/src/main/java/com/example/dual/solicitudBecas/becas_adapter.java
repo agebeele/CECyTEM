@@ -1,8 +1,11 @@
 package com.example.dual.solicitudBecas;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,12 +22,14 @@ public class becas_adapter extends RecyclerView.Adapter<becas_adapter.becas_adap
     private List<String> paternoList;
     private List<String> maternoList ;
     private List<String> nombreList ;
+    private SharedPreferences preferenciaBecas;
 
-    public becas_adapter(List<String> curpList, List<String> nombreList, List<String> paternoList, List<String> maternoList) {
+    public becas_adapter(List<String> curpList, List<String> nombreList, List<String> paternoList, List<String> maternoList, Context context) {
         this.curpList = curpList;
         this.paternoList = paternoList;
         this.maternoList = maternoList;
         this.nombreList = nombreList;
+        preferenciaBecas = context.getSharedPreferences("MyPreferencia_Becas", Context.MODE_PRIVATE);
     }
 
 
@@ -41,6 +46,17 @@ public class becas_adapter extends RecyclerView.Adapter<becas_adapter.becas_adap
         holder.paterno.setText(paternoList.get(position));
         holder.materno.setText(maternoList.get(position));
         holder.curp.setText(curpList.get(position));
+
+        // Configurar el estado del CheckBox
+        boolean tramiteRealizado = preferenciaBecas.getBoolean("tramiteRealizado_" + position, false);
+        holder.realizadoBecas.setChecked(tramiteRealizado);
+
+        // Guardar el estado del CheckBox en SharedPreferences cuando cambia
+        holder.realizadoBecas.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = preferenciaBecas.edit();
+            editor.putBoolean("tramiteRealizado_" + position, isChecked);
+            editor.apply();
+        });
     }
 
     @Override
@@ -58,6 +74,7 @@ public class becas_adapter extends RecyclerView.Adapter<becas_adapter.becas_adap
 
     public class becas_adapterViewHolder extends RecyclerView.ViewHolder {
         TextView nombre, paterno, materno, curp;
+        CheckBox realizadoBecas;
 
         public becas_adapterViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +82,7 @@ public class becas_adapter extends RecyclerView.Adapter<becas_adapter.becas_adap
             paterno = itemView.findViewById(R.id.paternoAlumno);
             materno = itemView.findViewById(R.id.maternoAlumno);
             curp = itemView.findViewById(R.id.curpAlumno);
+            realizadoBecas = itemView.findViewById(R.id.checkBoxTramiteRealizado_Beca);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

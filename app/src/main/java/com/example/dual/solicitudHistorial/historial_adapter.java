@@ -1,8 +1,11 @@
 package com.example.dual.solicitudHistorial;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,12 +23,14 @@ public class historial_adapter extends RecyclerView.Adapter<historial_adapter.hi
     private List<String> paternoList;
     private List<String> maternoList;
     private List<String> matriculaList;
+    private SharedPreferences preferenciaHistorial;
 
-    public historial_adapter(List<String>nombreList, List<String>paternoList, List<String>maternoList, List<String>matriculaList){
+    public historial_adapter(List<String>nombreList, List<String>paternoList, List<String>maternoList, List<String>matriculaList, Context context){
         this.nombreList = nombreList;
         this.paternoList = paternoList;
         this.maternoList = maternoList;
         this.matriculaList = matriculaList;
+        preferenciaHistorial = context.getSharedPreferences("MyPreferencia_Historial", Context.MODE_PRIVATE);
     }
 
     @NonNull
@@ -41,6 +46,17 @@ public class historial_adapter extends RecyclerView.Adapter<historial_adapter.hi
         holder.paterno.setText(paternoList.get(position));
         holder.materno.setText(maternoList.get(position));
         holder.matricula.setText(matriculaList.get(position));
+
+        // Configurar el estado del CheckBox
+        boolean tramiteRealizado = preferenciaHistorial.getBoolean("tramiteRealizado_" + position, false);
+        holder.realizadoHistorial.setChecked(tramiteRealizado);
+
+        // Guardar el estado del CheckBox en SharedPreferences cuando cambia
+        holder.realizadoHistorial.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = preferenciaHistorial.edit();
+            editor.putBoolean("tramiteRealizado_" + position, isChecked);
+            editor.apply();
+        });
     }
     @Override
     public int getItemCount()  {
@@ -54,6 +70,7 @@ public class historial_adapter extends RecyclerView.Adapter<historial_adapter.hi
     }
     public  class historial_adapterViewHolder extends RecyclerView.ViewHolder {
         TextView nombre, paterno, materno, matricula;
+        CheckBox realizadoHistorial;
 
         public historial_adapterViewHolder (@NonNull View itemView) {
             super(itemView);
@@ -61,6 +78,7 @@ public class historial_adapter extends RecyclerView.Adapter<historial_adapter.hi
             paterno = itemView.findViewById(R.id.paternoAlumno);
             materno = itemView.findViewById(R.id.maternoAlumno);
             matricula = itemView.findViewById(R.id.matriculaAlumno);
+            realizadoHistorial = itemView.findViewById(R.id.checkBoxTramiteRealizado_Historial);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

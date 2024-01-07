@@ -49,7 +49,7 @@ public class constancia_recycler extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(constancia_recycler.this));
 
-        constanciaAdapter = new constancia_adapter(nombreList, paternoList, maternoList, matriculaList);
+        constanciaAdapter = new constancia_adapter(nombreList, paternoList, maternoList, matriculaList, this);
 
         recyclerView.setAdapter(constanciaAdapter);
 

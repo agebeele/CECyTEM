@@ -1,8 +1,11 @@
 package com.example.dual.solicitudConstancia;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,12 +22,14 @@ import java.util.List;
     private List<String> paternoList;
     private List<String> maternoList;
     private List<String> matriculaList;
+    private SharedPreferences preferenciaConstancia;
 
-    public constancia_adapter(List<String>nombreList, List<String>paternoList, List<String>maternoList, List<String>matriculaList){
+    public constancia_adapter(List<String>nombreList, List<String>paternoList, List<String>maternoList, List<String>matriculaList, Context context){
         this.nombreList = nombreList;
         this.paternoList = paternoList;
         this.maternoList = maternoList;
         this.matriculaList = matriculaList;
+        preferenciaConstancia = context.getSharedPreferences("MyPreferencia_Constancia", Context.MODE_PRIVATE);
     }
 
         @NonNull
@@ -40,6 +45,17 @@ import java.util.List;
             holder.paterno.setText(paternoList.get(position));
             holder.materno.setText(maternoList.get(position));
             holder.matricula.setText(matriculaList.get(position));
+
+            // Configurar el estado del CheckBox
+            boolean tramiteRealizado = preferenciaConstancia.getBoolean("tramiteRealizado_" + position, false);
+            holder.realizadoConstancia.setChecked(tramiteRealizado);
+
+            // Guardar el estado del CheckBox en SharedPreferences cuando cambia
+            holder.realizadoConstancia.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                SharedPreferences.Editor editor = preferenciaConstancia.edit();
+                editor.putBoolean("tramiteRealizado_" + position, isChecked);
+                editor.apply();
+            });
         }
 
         @Override
@@ -54,6 +70,7 @@ import java.util.List;
         }
         public  class constancia_adapterViewHolder extends RecyclerView.ViewHolder {
             TextView nombre, paterno, materno, matricula;
+            CheckBox realizadoConstancia;
 
             public constancia_adapterViewHolder (@NonNull View itemView) {
                 super(itemView);
@@ -61,6 +78,7 @@ import java.util.List;
                 paterno = itemView.findViewById(R.id.paternoAlumno);
                 materno = itemView.findViewById(R.id.maternoAlumno);
                 matricula = itemView.findViewById(R.id.matriculaAlumno);
+                realizadoConstancia = itemView.findViewById(R.id.checkBoxTramiteRealizado_Constancia);
 
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

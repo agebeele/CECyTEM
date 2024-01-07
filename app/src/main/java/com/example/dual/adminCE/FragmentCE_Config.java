@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.example.dual.R;
+import com.example.dual.alumnos.Activity_Eventos;
 import com.example.dual.alumnos.Activity_Login;
 import com.example.dual.alumnos.Activity_Nostros;
 
@@ -42,6 +43,13 @@ public class FragmentCE_Config extends Fragment {
                 mostrarDialogoConfirmacion();
             }
         });
+        eventos = (Button)v.findViewById(R.id.eventosBoton);
+        eventos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cambiarEventos();
+            }
+        });
 
         acercaNostros = (Button) v.findViewById(R.id.nosotrosBoton);
         acercaNostros.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +60,11 @@ public class FragmentCE_Config extends Fragment {
         });
 
         return v;
+    }
+
+    private void cambiarEventos() {
+        Intent pantallaEventos = new Intent(getActivity(), Activity_Eventos.class);
+        startActivity(pantallaEventos);
     }
 
     private void cambiarPantalla_Perfil() {

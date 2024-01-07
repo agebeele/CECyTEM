@@ -12,7 +12,7 @@
 
         <!-- Agrega el CheckBox -->
         <CheckBox
-            android:id="@+id/checkBoxTramiteRealizado"
+            android:id="@+id/checkBoxTramiteRealizado_Credencial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -23,7 +23,7 @@
             android:id="@+id/tramiteAlumno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/checkBoxTramiteRealizado"
+            android:layout_toStartOf="@id/checkBoxTramiteRealizado_Credencial"
             android:text="Trámite: Credencial"
             android:textStyle="bold"
             android:textAlignment="center"

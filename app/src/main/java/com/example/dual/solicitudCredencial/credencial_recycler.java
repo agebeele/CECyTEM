@@ -46,7 +46,7 @@ public class credencial_recycler extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(credencial_recycler.this));
 
-        credencial_adapter = new credencial_adapter(nombreList, paternoList, maternoList, matriculaList);
+        credencial_adapter = new credencial_adapter(nombreList, paternoList, maternoList, matriculaList, this);
 
         recyclerView.setAdapter(credencial_adapter);
 

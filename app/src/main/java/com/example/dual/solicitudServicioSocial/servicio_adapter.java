@@ -1,8 +1,11 @@
 package com.example.dual.solicitudServicioSocial;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,12 +22,14 @@ public class servicio_adapter extends RecyclerView.Adapter<servicio_adapter.serv
     private List<String> GrupoList;
     private List<String> NombreDependenciaList ;
     private List<String> TurnoList ;
+    private SharedPreferences preferenciaServicio;
 
-    public servicio_adapter(List<String> nombreList, List<String> GrupoList,List<String> NombreDependenciaList, List<String> TurnoList) {
+    public servicio_adapter(List<String> nombreList, List<String> GrupoList,List<String> NombreDependenciaList, List<String> TurnoList, Context context) {
         this.nombreList = nombreList;
         this.GrupoList = GrupoList;
         this.NombreDependenciaList =NombreDependenciaList ;
         this.TurnoList = TurnoList ;
+        preferenciaServicio = context.getSharedPreferences("MyPreferencia_Servicio", Context.MODE_PRIVATE);
     }
 
     @NonNull
@@ -40,6 +45,17 @@ public class servicio_adapter extends RecyclerView.Adapter<servicio_adapter.serv
         holder.grupo.setText(GrupoList.get(position));
         holder.turno.setText(TurnoList.get(position));
         holder.nombredependencia.setText(NombreDependenciaList.get(position));
+
+        // Configurar el estado del CheckBox
+        boolean tramiteRealizado = preferenciaServicio.getBoolean("tramiteRealizado_" + position, false);
+        holder.realizadoServicio.setChecked(tramiteRealizado);
+
+        // Guardar el estado del CheckBox en SharedPreferences cuando cambia
+        holder.realizadoServicio.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = preferenciaServicio.edit();
+            editor.putBoolean("tramiteRealizado_" + position, isChecked);
+            editor.apply();
+        });
     }
 
     @Override
@@ -57,13 +73,14 @@ public class servicio_adapter extends RecyclerView.Adapter<servicio_adapter.serv
 
     public class servicio_adapterViewHolder extends RecyclerView.ViewHolder {
         TextView nombre, grupo, turno, nombredependencia;
-
+        CheckBox realizadoServicio;
         public servicio_adapterViewHolder(@NonNull View itemView) {
             super(itemView);
             nombre = itemView.findViewById(R.id.nombreAlumno);
             grupo = itemView.findViewById(R.id.grupoAlumno);
             turno = itemView.findViewById(R.id.turnoAlumno);
             nombredependencia = itemView.findViewById(R.id.dependenciaAlumno);
+            realizadoServicio = itemView.findViewById(R.id.checkBoxTramiteRealizado_Servicio);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

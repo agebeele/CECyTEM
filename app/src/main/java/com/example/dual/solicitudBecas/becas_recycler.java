@@ -65,7 +65,7 @@ public class becas_recycler extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(becas_recycler.this));
 
-        becasAdapter = new becas_adapter(curpList, paternoList, maternoList, nombreList);
+        becasAdapter = new becas_adapter(curpList, paternoList, maternoList, nombreList, this);
         recyclerView.setAdapter(becasAdapter);
 
         MiAsyncTask miAsyncTask = new MiAsyncTask();

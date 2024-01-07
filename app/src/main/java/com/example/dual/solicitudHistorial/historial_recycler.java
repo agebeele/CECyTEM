@@ -47,7 +47,7 @@ public class historial_recycler extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(historial_recycler.this));
 
-        historialAdapter = new historial_adapter(nombreList, paternoList, maternoList, matriculaList);
+        historialAdapter = new historial_adapter(nombreList, paternoList, maternoList, matriculaList, this);
 
         recyclerView.setAdapter(historialAdapter);
 

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dual.R;
 import com.example.dual.WebService;
 import com.example.dual.alumnos.DividerItemDecoration;
-import com.example.dual.solicitudConstancia.constancia_item;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,7 +59,7 @@ public class servicio_recycler extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(servicio_recycler.this));
 
-        ServicioAdapter = new servicio_adapter(nombreList,GrupoList, NombreDependenciaList, TurnoList);
+        ServicioAdapter = new servicio_adapter(nombreList,GrupoList, NombreDependenciaList, TurnoList, this);
 
         recyclerView.setAdapter(ServicioAdapter);
 

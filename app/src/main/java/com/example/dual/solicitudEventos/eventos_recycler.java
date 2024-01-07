@@ -47,7 +47,7 @@ public class eventos_recycler extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(eventos_recycler.this));
 
-        eventosAdapter = new eventos_adapter(matriculaList,nombreList, telefonoCasaList, telefonoCelularList, grupoList, eventoList);
+        eventosAdapter = new eventos_adapter(matriculaList,nombreList, grupoList, eventoList, this);
 
         recyclerView.setAdapter(eventosAdapter);
 
