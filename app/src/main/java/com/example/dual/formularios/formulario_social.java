@@ -1,16 +1,19 @@
 package com.example.dual.formularios;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.dual.R;
+import com.example.dual.WebService;
 
 public class formulario_social extends AppCompatActivity {
+    String crud;
+    static WebService obj = new WebService();
     TextView nombreAlumno, promedio , telefonoCasa,telefonoCelular, grupo, correo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

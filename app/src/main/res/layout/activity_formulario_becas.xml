@@ -452,7 +452,7 @@
                     android:id="@+id/button9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="enviarDatosCredencial"
+                    android:onClick="enviarDatosBecas"
                     android:text="Enviar" />
 
                 <TextView

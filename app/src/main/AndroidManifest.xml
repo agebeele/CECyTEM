@@ -24,6 +24,33 @@
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".solicitudEventos.eventos_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudEventos.eventos_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudEventos.eventos_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudServicioSocial.servicio_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudServicioSocial.servicio_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudServicioSocial.servicio_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudBecas.becas_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudBecas.beca_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudBecas.becas_adapter"
+            android:exported="false" />
+        <activity
             android:name=".solicitudHistorial.historial_item"
             android:exported="false" />
         <activity
@@ -52,15 +79,6 @@
             android:exported="false" />
         <activity
             android:name=".solicitudCredencial.credencial_recycler"
-            android:exported="false" />
-        <activity
-            android:name=".SolicitudAdapter_CE"
-            android:exported="false" />
-        <activity
-            android:name=".SolicitudesCE"
-            android:exported="false" />
-        <activity
-            android:name=".TramitesAdapterCE"
             android:exported="false" />
         <activity
             android:name=".adminCE.adminCE_Perfil"
