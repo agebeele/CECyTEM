@@ -94,14 +94,14 @@ public class fragment_vinculacion extends Fragment {
 
 // Establece las fechas de inicio y fin del período vacacional por semestre
         Calendar fechaInicioVacaciones = Calendar.getInstance();
-        fechaInicioVacaciones.set(Calendar.YEAR, 2023); // Cambia el año según tu necesidad
-        fechaInicioVacaciones.set(Calendar.MONTH, Calendar.JULY); // Cambia el mes según tu necesidad
+        fechaInicioVacaciones.set(Calendar.YEAR, 2024); // Cambia el año según tu necesidad
+        fechaInicioVacaciones.set(Calendar.MONTH, Calendar.MARCH); // Cambia el mes según tu necesidad
         fechaInicioVacaciones.set(Calendar.DAY_OF_MONTH, 1); // Cambia el día según tu necesidad
 
         Calendar fechaFinVacaciones = Calendar.getInstance();
-        fechaFinVacaciones.set(Calendar.YEAR, 2023); // Cambia el año según tu necesidad
-        fechaFinVacaciones.set(Calendar.MONTH, Calendar.DECEMBER); // Cambia el mes según tu necesidad
-        fechaFinVacaciones.set(Calendar.DAY_OF_MONTH, 31); // Cambia el día según tu necesidad
+        fechaFinVacaciones.set(Calendar.YEAR, 2024); // Cambia el año según tu necesidad
+        fechaFinVacaciones.set(Calendar.MONTH, Calendar.APRIL); // Cambia el mes según tu necesidad
+        fechaFinVacaciones.set(Calendar.DAY_OF_MONTH, 1); // Cambia el día según tu necesidad
 
 // Obtén el array de opciones desde los recursos
         String[] opciones = getResources().getStringArray(R.array.spinner_vi);
@@ -116,8 +116,7 @@ public class fragment_vinculacion extends Fragment {
         } else {
             // Fuera del período vacacional, filtra opciones específicas en el Spinner
             List<String> opcionesFiltradas = new ArrayList<>(Arrays.asList(opciones));
-            opcionesFiltradas.remove("Tramite de Servicio Social");
-            opcionesFiltradas.remove("Tramite de Becas");
+            //opcionesFiltradas.remove("Tramite de Servicio Social");
 
             ArrayAdapter<String> adapterFiltrado = new ArrayAdapter<>(
                     requireActivity(), android.R.layout.simple_spinner_item, opcionesFiltradas);

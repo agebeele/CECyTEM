@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/verde_1"
     tools:context="solicitudServicioSocial.servicio_item">
     <ScrollView
         android:layout_width="match_parent"
@@ -94,10 +95,10 @@
                     android:id="@+id/textFecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Fecha de la solicitud:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Fecha de la solicitud:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_fecha"
@@ -111,10 +112,10 @@
                     android:id="@+id/textHora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Hora:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Hora:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_hora"
@@ -128,10 +129,9 @@
                     android:id="@+id/txtNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:text="Nombre del Alumno:"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -140,7 +140,9 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Nombre" />
+                    android:text="Nombre"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtPromedio"
@@ -148,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:text="Promedio:"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -156,8 +158,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Promedio"
-                    android:inputType="number" />
+                    android:text="Promedio"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtTelefonoCasa"
@@ -165,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:text="Telefono de Casa"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -173,8 +177,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Telefono de Casa"
-                    android:inputType="number" />
+                    android:text="Telefono de Casa"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtTelefonoCelular"
@@ -182,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:text="Telefono de Celular"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -190,8 +196,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Telefono Celular"
-                    android:inputType="number" />
+                    android:text="Telefono Celular"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtGrupo"
@@ -199,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:text="Grupo:"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -207,8 +215,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Grupo"
-                    android:inputType="number" />
+                    android:text="Grupo"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtCorreoIns"
@@ -216,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:text="Correo Institucional"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -224,8 +234,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Correo Institucional"
-                    android:inputType="textEmailAddress" />
+                    android:text="Correo Institucional"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtnombreOf"
@@ -233,7 +245,7 @@
                     android:layout_height="wrap_content"
                     android:text="NOMBRE OFICIAL DE LA DEPENDENCIA"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -241,8 +253,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Nombre de la Dependencia"
-                    android:inputType="text" />
+                    android:text="Nombre de la Dependencia"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtcct"
@@ -250,7 +264,7 @@
                     android:layout_height="wrap_content"
                     android:text="C.C.T"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -258,8 +272,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="C.C.T"
-                    android:inputType="text" />
+                    android:text="C.C.T"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtTurno"
@@ -267,7 +283,7 @@
                     android:layout_height="wrap_content"
                     android:text="TURNO"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -275,8 +291,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Turno"
-                    android:inputType="text" />
+                    android:text="Turno"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
 
                 <TextView
@@ -285,7 +303,7 @@
                     android:layout_height="wrap_content"
                     android:text="DOMICILIO DE LA DEPENDENCIA"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -293,8 +311,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Domicilio de la Dependencia"
-                    android:inputType="text" />
+                    android:text="Domicilio de la Dependencia"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtTelefonoDependencia"
@@ -302,7 +322,7 @@
                     android:layout_height="wrap_content"
                     android:text="TELEFONO DE LA DEPENDENCIA"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -310,8 +330,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Teléfono de la Dependencia"
-                    android:inputType="number" />
+                    android:text="Teléfono de la Dependencia"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtNivelGobierno"
@@ -319,7 +341,7 @@
                     android:layout_height="wrap_content"
                     android:text="¿QUE NIVEL DE GOBIERNO PERTENECE TU DEPENDENCIA?"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -327,8 +349,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Nivel de Gobierno"
-                    android:inputType="text" />
+                    android:text="Nivel de Gobierno"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtNombreR"
@@ -336,7 +360,7 @@
                     android:layout_height="wrap_content"
                     android:text="NOMBRE DEL RESPONSABLE DE TU SERVICIO SOCIAL"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -344,8 +368,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Nombre del Responsable"
-                    android:inputType="text" />
+                    android:text="Nombre del Responsable"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtCargoR"
@@ -353,7 +379,7 @@
                     android:layout_height="wrap_content"
                     android:text="CARGO DEL RESPONSABLE DE TU SERVICIO SOCIAL"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -361,8 +387,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Cargo del Responsable"
-                    android:inputType="text" />
+                    android:text="Cargo del Responsable"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtActividades"
@@ -370,7 +398,7 @@
                     android:layout_height="wrap_content"
                     android:text="ACTIVIDADES A DESARROLLAR"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -378,8 +406,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Actividades a Desarrollar"
-                    android:inputType="text" />
+                    android:text="Actividades a Desarrollar"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/textView38"
@@ -387,7 +417,7 @@
                     android:layout_height="wrap_content"
                     android:text="HORARIO DE PRESTACION"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -395,8 +425,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Horario de Prestación"
-                    android:inputType="text" />
+                    android:text="Horario de Prestación"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtPadreT"
@@ -404,7 +436,7 @@
                     android:layout_height="wrap_content"
                     android:text="NOMBRE DEL PADRE O TUTOR DE FAMILIA"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -412,8 +444,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Nombre del Padre o Tutor"
-                    android:inputType="text" />
+                    android:text="Nombre del Padre o Tutor"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
 
 

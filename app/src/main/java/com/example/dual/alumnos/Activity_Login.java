@@ -142,8 +142,8 @@ public class Activity_Login extends AppCompatActivity {
                     json_data = jArray.getJSONObject(i);
                 }
 
-                // Obtener la matrícula del JSON
-                String matricula = json_data.getString("matricula");
+                    // Obtener la matrícula del JSON
+                    String matricula = json_data.getString("matricula");
 
                 // Resto del código para redireccionar a la próxima actividad
                 usuario.setText(matricula);
@@ -175,9 +175,4 @@ public class Activity_Login extends AppCompatActivity {
         startActivity(iniciar);
         Toast.makeText(Activity_Login.this, "Bienvenido/a aspirante",Toast.LENGTH_SHORT).show();
     }
-    public void egresadoCambio(View view) {
-        Intent iniciar = new Intent(Activity_Login.this, Activity_Egresado.class);
-        startActivity(iniciar);
-    }
-
 }

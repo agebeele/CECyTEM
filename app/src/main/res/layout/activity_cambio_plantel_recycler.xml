@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verde_1"
-    tools:context=".solicitudConstancia.constancia_recycler">
+    tools:context=".solicitudCambioPlantel.cambioPlantel_Recycler">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -31,13 +31,13 @@
                 android:id="@+id/textView20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Solicitudes para Constancia"
+                android:text="Solicitudes para Cambio de Plantel"
                 android:textColor="@color/verde_1"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewConstancia"
+                android:id="@+id/recyclerView_cambioPlantel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp" />

@@ -24,6 +24,42 @@
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".solicitudCambioTurno.cambioTurno_Item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioTurno.cambioTurno_Adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioTurno.cambioTurno_Recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioPlantel.cambioPlantel_Item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioPlantel.cambioPlantel_Adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioPlantel.cambioPlantel_Recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioCarrera.cambioCarrera_Item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioCarrera.cambioCarrera_Adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioCarrera.cambioCarrera_Recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioGrupo.cambioGrupo_Item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioGrupo.cambioGrupo_Adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioGrupo.cambioGrupo_Recycler"
+            android:exported="false" />
+        <activity
             android:name=".solicitudEventos.eventos_item"
             android:exported="false" />
         <activity

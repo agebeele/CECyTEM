@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/verde_1"
     tools:context="solicitudBecas.beca_item">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -136,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:text="CURP"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textPaterno"
@@ -153,7 +154,7 @@
                         android:layout_height="wrap_content"
                         android:text="Apellido Paterno: Lopez"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textMaterno"
@@ -170,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:text="Apellido Materno: Garcia"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -188,7 +189,7 @@
                         android:layout_height="wrap_content"
                         android:text="Nombre: Brandon Adrian"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -206,7 +207,7 @@
                         android:layout_height="wrap_content"
                         android:text="Fecha: 00/00/00"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textSexo"
@@ -223,7 +224,7 @@
                         android:layout_height="wrap_content"
                         android:text="Hombre o Mujer"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -241,7 +242,7 @@
                         android:layout_height="wrap_content"
                         android:text="Estado de Naciminto"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -259,7 +260,7 @@
                         android:layout_height="wrap_content"
                         android:text="Situacion Academica"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -277,7 +278,7 @@
                         android:layout_height="wrap_content"
                         android:text="Hombre o Mujer"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textCorreP"
@@ -294,7 +295,7 @@
                         android:layout_height="wrap_content"
                         android:text="Correo Personal"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textCorreoIns"
@@ -311,7 +312,7 @@
                         android:layout_height="wrap_content"
                         android:text="ejemplo1@cecytem.edu.mx"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -329,7 +330,7 @@
                         android:layout_height="wrap_content"
                         android:text="5555555555"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textTelefonoAlumno"
@@ -346,7 +347,7 @@
                         android:layout_height="wrap_content"
                         android:text="555555555"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -364,7 +365,7 @@
                         android:layout_height="wrap_content"
                         android:text="5555555"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -382,7 +383,7 @@
                         android:layout_height="wrap_content"
                         android:text="Av Lopez Mateos"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textNoEx"
@@ -399,7 +400,7 @@
                         android:layout_height="wrap_content"
                         android:text="Mz 15 Lt43"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textNoInterior"
@@ -416,7 +417,7 @@
                         android:layout_height="wrap_content"
                         android:text="25"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textColonia"
@@ -433,7 +434,7 @@
                         android:layout_height="wrap_content"
                         android:text="Villa de las Flores"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textMunicipio"
@@ -450,7 +451,7 @@
                         android:layout_height="wrap_content"
                         android:text="Coacalco"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
 
                     <TextView
@@ -468,7 +469,7 @@
                         android:layout_height="wrap_content"
                         android:text="Mexico"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textCodigoP"
@@ -485,7 +486,7 @@
                         android:layout_height="wrap_content"
                         android:text="55720"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textEscuelaP"
@@ -502,7 +503,7 @@
                         android:layout_height="wrap_content"
                         android:text="Jaime Nuno"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textPromedio"
@@ -519,7 +520,7 @@
                         android:layout_height="wrap_content"
                         android:text="9.0"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 

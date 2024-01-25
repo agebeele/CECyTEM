@@ -18,6 +18,38 @@
 
     </string-array>
 
+    <string-array name="spinner_carreraActual">
+        <item>Administración Gerencial</item>
+        <item>Programación</item>
+        <item>Soporte y Mantenimiento en Equipo de Computo</item>
+    </string-array>
+
+    <string-array name="spinner_carreraCambio">
+        <item>Administración Gerencial</item>
+        <item>Programación</item>
+        <item>Soporte y Mantenimiento en Equipo de Computo</item>
+    </string-array>
+
+    <string-array name="spinner_turnoCambio">
+        <item>Matutino</item>
+        <item>Vespertino</item>
+    </string-array>
+
+    <string-array name="spinner_PlantelCambio">
+        <item>CECyTEM Plantel Ecatepec I</item>
+        <item>CECyTEM Plantel Ecatepec II</item>
+        <item>CECyTEM Plantel Ecatepec III</item>
+        <item>CECyTEM Plantel Tultitlan</item>
+        <item>CECyTEM Plantel Tultepec</item>
+        <item>CECyTEM Plantel Nicolas Romero I</item>
+        <item>CECyTEM Plantel Nicolas Romero II</item>
+        <item>CECyTEM Plantel Nicolas Romero III</item>
+        <item>CECyTEM Plantel Cuatitlan</item>
+        <item>CECyTEM Plantel Cuatitlan Izcalli</item>
+        <item>CECyTEM Plantel Tecamac</item>
+        <item>CECyTEM Plantel Tepotzotlan</item>
+    </string-array>
+
     <string-array name="developers">
         <item>Project Manager: Eduardo Sebastian Piña Chavarria</item>
         <item>Product Owner: Ociel Josue Tabal Velasco</item>
